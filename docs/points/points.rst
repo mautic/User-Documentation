@@ -34,7 +34,7 @@ To add a new action:
 
    * **Category** - Organize your Point Actions based on their goals, Campaigns, etc. For more information, see :doc:`Categories</categories/categories-overview>`. All Points accumulate on a Contact record, regardless of Category. There is one Points score for each Contact.
 
-   * **Published and Publish/Unpublish at date/time** - Once you have a Point action, Mautic awards Points when a Contact completes the action. Points aren't given for unpublished actions. If you have target behaviors that you want to award Points for within a certain time period, you can set the publish and unpublish dates
+   * **Active and Activate/Deactivate at date/time** - Once you have a Point action, Mautic awards Points when a Contact completes the action. Points aren't given for inactive actions. If you have target behaviors that you want to award Points for within a certain time period, you can set the activate and deactivate dates
 
    * **Is repeatable** - To award Points each time a Contact completes an action, select **Yes**. If you want to award Points **only** the first time someone completes the action, select **No** - this is the default.
 
@@ -52,7 +52,7 @@ Once a Contact has accumulated a Point total, you may want to trigger an action 
 .. image:: images/points-trigger.png
     :alt: Screenshot of Points trigger
 
-Creating Point Triggers is like creating Point Actions. The **Name**, **Description**, **Category**, and **Publish** options are all the same. The trigger fires based on the minimum number of Points. Set a number and decide if you want to **Trigger for existing applicable Contacts upon saving - if published**. 
+Creating Point Triggers is like creating Point Actions. The **Name**, **Description**, **Category**, and **Active** options are all the same. The trigger fires based on the minimum number of Points. Set a number and decide if you want to **Trigger for existing applicable Contacts upon saving - if activated**. 
 
 Once you have decided and entered those options, go to the **Events** tab. Here, you can trigger one or more events once a Contact has reached your predetermined Point total. These Point Triggers and associated events are also fully customizable.
 
@@ -62,12 +62,12 @@ Once you have decided and entered those options, go to the **Events** tab. Here,
 Campaign triggers
 =================
 
-**Modify Contact's Campaigns** - Add a Contact to or remove a Contact from any Campaigns you have published.
+**Modify Contact's Campaigns** - Add a Contact to or remove a Contact from any Campaigns you have activated.
 
 Contact triggers
 ================
 
-**Modify Contact's Segments** - Add a Contact to or remove a Contact from any Segments you have published.
+**Modify Contact's Segments** - Add a Contact to or remove a Contact from any Segments you have activated.
 
 **Modify Contact's tags** - Add or remove any Tags on the Contact record. If a Tag doesn't exist, you may create a new one in the edit window for this event.
 

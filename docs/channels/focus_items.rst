@@ -154,13 +154,13 @@ When creating a new Focus Item, you can set the following fields:
 
 **Category** - Assign a Category to help you organize your Focus Items.
 
-**Published** - Whether the Focus Item is available for use - published - or not available - unpublished
+**Active** - Whether the Focus Item is available for use - active - or not available - inactive.
 
 .. vale off
 
-**Publish at (date/time)** - This allows you to define the date and time at which this Text Message is available for sending to Contacts
+**Activate at (date/time)** - This allows you to define the date and time at which this Text Message is available for sending to Contacts
 
-**Unpublish at (date/time)** - This allows you to define the date and time at which this Text Message ceases to be available for sending to Contacts.
+**Deactivate at (date/time)** - This allows you to define the date and time at which this Text Message ceases to be available for sending to Contacts.
 
 .. vale on
 
@@ -195,7 +195,7 @@ You can use the menu on the sidebar to configure the Focus Item to your liking. 
 Using Focus Items
 *****************
 
-Once you have created your Focus Item, you're ready to publish it to your website. If you're not quite ready for the Focus Item to go live but you need to get it set up on your website, you can set the Focus Item to Unpublished.
+Once you have created your Focus Item, you're ready to activate it to your website. If you're not quite ready for the Focus Item to go live but you need to get it set up on your website, set the Focus Item to inactive.
 
 Deploying to a website
 ======================

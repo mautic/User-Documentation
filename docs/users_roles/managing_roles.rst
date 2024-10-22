@@ -57,7 +57,7 @@ To configure a Role, leave the **Full System Access** switch at **No** and click
   :width: 800
   :alt: Screenshot showing Mautic Roles
 
-5. Most permission Categories have options for **View**, **Edit**, **Create**, **Delete**, and **Publish**. Select checkboxes for the appropriate permissions for this Role. To select every checkbox and grant the User all permissions, select the **Full** option.
+5. Most permission Categories have options for **View**, **Edit**, **Create**, **Delete**, and **Active**. Select checkboxes for the appropriate permissions for this Role. To select every checkbox and grant the User all permissions, select the **Full** option.
 
 Explaining the permission options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -72,15 +72,15 @@ There are several options for selecting permissions:
 
 * **Delete** - this allows the Users with this Role to delete resources in this part of Mautic
 
-* **Publish** - this allows the Users with this Role to make resources in this part of Mautic available by publishing them
+* **Activate** - this allows the Users with this Role to make resources in this part of Mautic available by activating them
 
 * **Full** - this allows the Users with this Role all of the permissions.
 
 There are permission levels relating to resources the User has created themselves, and those created by others:
 
-* **Own** - this allows the Users with this Role to ``view/edit/delete/publish`` their own resources in this part of Mautic, but not those created by others
+* **Own** - this allows the Users with this Role to ``view/edit/delete/activate`` their own resources in this part of Mautic, but not those created by others
 
-* **Others** - this allows the Users with this Role to ``view/edit/delete/publish`` their own resources in this part of Mautic, and those created by others
+* **Others** - this allows the Users with this Role to ``view/edit/delete/activate`` their own resources in this part of Mautic, and those created by others
 
 There are permission levels relating to being able to manage resources:
 

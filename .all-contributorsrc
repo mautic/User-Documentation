@@ -113,6 +113,15 @@
       "contributions": [
         "review"
       ]
+    },
+    {
+      "login": "heebinho",
+      "name": "Renato Heeb",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1469531?v=4",
+      "profile": "http://renatoheeb.com",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
