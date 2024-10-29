@@ -21,34 +21,19 @@ Step 1: Authorizing Social Media Plugins
 
 Before you can use social login, each social media plugin needs authorization. Here’s how to do it:
 
-To get started with social login, you’ll first need to authorize each plugin:
-
-1. Copy the Callback URL:
-
-   After creating your social app, the platform will ask for a Callback URL.
-
-   - Go to Mautic's plugin configuration window and copy the Callback URL provided there.
-   - Paste it into the appropriate field in your social app setup.
+1. **Copy the Callback URL**: Go to Mautic's plugin configuration window and copy the Callback URL provided there. Paste it into the appropriate field in your social app setup.
 
  .. image:: images/Call_back.png
     :width: 400
     :alt: Screenshot of a call back url input field.
 
-2. Add Your API Keys:
+2. **Add Your API Keys**: Copy the API Key (Client Key) and API Secret (Client Secret) from the social platform. Paste these keys into the relevant fields in the Mautic plugin configuration.
 
-   Now that your social app is set up:
-
-   - Copy the API Key (Client Key) and API Secret (Client Secret) from the social platform.
-   - Paste these keys into the relevant fields in the Mautic plugin configuration.
 .. image:: images/API_key.png
     :width: 400
     :alt: Screenshot of an API Key input field.
 
-3. Authorize the Plugin:
-
-   - In the Mautic plugin configuration, click **Authorize**.
-   - Ensure the plugin is marked as **Published** by toggling the option to “Yes”.
-   - Save your configuration to complete the setup.
+3. **Authorize the Plugin**: In the Mautic plugin configuration, click **Authorize**. Ensure the plugin is marked as **Published** by toggling the option to “Yes”. Finally, save your configuration to complete the setup.
 
 .. Tip:: You can manage each social network under its respective tab in Mautic’s plugin settings. Make sure each network is fully authorized by adding the required API credentials.
 
@@ -57,20 +42,16 @@ Step 2: Adding Social Login Buttons to Forms
 
 Once your plugins are authorized, you can add social login buttons to your Mautic forms.
 
-1. Create or Edit a Form:
+1. Go to the Forms section in Mautic and either create a new form or edit an existing one.
 
-   Go to the Forms section in Mautic and either create a new form or edit an existing one.
+2. Select the **Social Login** field from the form builder. Buttons for all authorized social platforms (e.g., Twitter, Facebook, LinkedIn) will automatically appear.
 
-2. Add the Social Login Field:
+3. When users log in using their social accounts, Mautic will attempt to automatically fill in fields like **Name** or **Email** based on their social profile.
 
-   Select the **Social Login** field from the form builder. Buttons for all authorized social platforms (e.g., Twitter, Facebook, LinkedIn) will automatically appear.
-
-3. Pre-fill Form Fields:
-
-   When users log in using their social accounts, Mautic will attempt to automatically fill in fields like **Name** or **Email** based on their social profile.
 .. image:: images/adding_social_login.png
    :alt: Mautic plugin configuration screen showing authorized status
    :width: 400
+
 .. note:: 
    Only the buttons for plugins you’ve authorized will work in the form. Ensure all integrations are configured correctly for a smooth user experience.
 
@@ -79,9 +60,7 @@ Step 3: Configuring Features and Mapping Contact Fields
 
 Once the plugin is authorized, you can customize how Mautic handles the incoming social profile data.
 
-1. Map Social Profile Fields to Mautic Fields:
-
-   Under the **Contact Field Mapping** tab in the plugin settings, map the fields from the user’s social profile (e.g., Email, Name) to the appropriate Mautic contact fields.
+1. Under the **Contact Field Mapping** tab in the plugin settings, map the fields from the user’s social profile (e.g., Email, Name) to the appropriate Mautic contact fields.
 
    - You only need to map fields that are relevant to your form.
    - Unmapped fields will not be used to update or create contacts in Mautic.
@@ -93,13 +72,10 @@ Supported Social Profile Fields
 
 Each platform provides different user data fields. Here's a quick reference of the fields you can map:
 
-Twitter:
-- Profile Handle, Name, Location, Description, URL, Time Zone, Language, Email.
+- **Twitter**: Profile Handle, Name, Location, Description, URL, Time Zone, Language, Email.
 
-Facebook:
-- First Name, Last Name, Name, Gender, Locale, Email, Profile Link.
+- **Facebook**: First Name, Last Name, Name, Gender, Locale, Email, Profile Link.
 
-LinkedIn:
-- First Name, Last Name, Maiden Name, Formatted Name, Headline, Location, Summary, Specialties, Positions, Public Profile URL, Email Address.
+- **LinkedIn**: First Name, Last Name, Maiden Name, Formatted Name, Headline, Location, Summary, Specialties, Positions, Public Profile URL, Email Address.
 
 .. vale on
