@@ -1,12 +1,12 @@
 .. vale off
 
-Social Login Guide
-=========================
+Social Login
+============
 
 With Mautic's Social Login, users can easily sign in via their favorite social platforms like Twitter, Facebook, or LinkedIn. The social login feature automatically pre-fills forms with profile data and updates or creates new contacts in Mautic, streamlining the user experience.
 
 Before You Begin: Setup Requirements
-----------------------------------------
+------------------------------------
 
 Before enabling social login, make sure you have created social media apps on the platforms you want to integrate:
 
@@ -58,12 +58,11 @@ Once your plugins are authorized, you can add social login buttons to your Mauti
 Step 3: Configuring Features and Mapping Contact Fields
 -------------------------------------------------------
 
-Once the plugin is authorized, you can customize how Mautic handles the incoming social profile data.
+Once the plugin is authorized, you can customize how Mautic handles the incoming social profile data. Under the **Contact Field Mapping** tab in the plugin settings, map the fields from the user’s social profile (e.g., Email, Name) to the appropriate Mautic contact fields.
 
-1. Under the **Contact Field Mapping** tab in the plugin settings, map the fields from the user’s social profile (e.g., Email, Name) to the appropriate Mautic contact fields.
+- You only need to map fields that are relevant to your form.
 
-   - You only need to map fields that are relevant to your form.
-   - Unmapped fields will not be used to update or create contacts in Mautic.
+- Unmapped fields will not be used to update or create contacts in Mautic.
 
 Example: Map **First Name** from Facebook to **First Name** in Mautic's contact fields.
 
