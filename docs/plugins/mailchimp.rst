@@ -6,7 +6,8 @@ MailChimp
 .. vale on
 This plugin can send contacts to MailChimp cilents based on Contact actions or Point Triggers.
 
-## Authorize
+Authorize
+*********
 
 ### Get MailChimp API key
 
