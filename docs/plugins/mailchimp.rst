@@ -16,6 +16,11 @@ Authorize
 1. Create a MailChimp account.
 2. Go to *Account* / *Extras* / *API Keys* and create a new one.
 3. Copy the created API Key.
+   
+.. image:: plugins-mailchimp-create-api-key-1-and-2.png
+  :alt: Screenshot of MailChimp plugin authorization
+  :width: 500
+  :align: center
 
  Authorize Mautic - MailChimp plugin
 ===========
@@ -23,6 +28,8 @@ Authorize
 1. Fill in with your MailChimp's account **username** 
 2. Add the **API key**
 3. Click on ***Save & Close***  
+
+
 
 Configure the plugin
 **********
@@ -38,12 +45,12 @@ Navigate to the *Features* tab in the plugin configuration modal box. You should
 
    If you don't have a segment in [MailChimp][mailchimp] created yet, go to *MailChimp dashboard* / *Segments* / *Create List* and create one.
 
-1. Save the plugin configuration
-1. Open it again.
+2. Save the plugin configuration
+3. Open it again.
 
    The *Contact Field Mapping* tab should appear now.
 
-1. Configure the [field mapping][field-mapping].
+4. Configure the [field mapping][field-mapping].
 
 Other configuration options
 ===========
