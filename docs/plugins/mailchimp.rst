@@ -18,9 +18,19 @@ Authorize
 3. Copy the created API Key.
    
 .. image:: plugins-mailchimp-create-api-key-1-and-2.png
-  :alt: Screenshot of MailChimp plugin authorization
+  :alt: Screenshot of MailChimp dashboard with arrows pointing at the Extras tab and the API Keys section
   :width: 500
   :align: center
+
+  .. image:: plugins-mailchimp-create-api-key-3a.png
+   :alt: Screenshot of MailChimp dashboard with an arrow pointing at the Create API Key button
+   :width: 500
+   :align: center
+
+   .. image:: plugins-mailchimp-create-api-key-3b-and-3c.png
+      :alt: Screenshot of the Name New API Key section with arrows pointing at the test and Generate Key button
+      :width: 500
+      :align: center
 
  Authorize Mautic - MailChimp plugin
 ===========
