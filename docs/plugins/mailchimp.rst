@@ -20,7 +20,7 @@ Authorize
  Authorize Mautic - MailChimp plugin
 ===========
 
-1.Fill in with your MailChimp's account **username** 
+1. Fill in with your MailChimp's account **username** 
 2. Add the **API key**
 3. Click on ***Save & Close***  
 
