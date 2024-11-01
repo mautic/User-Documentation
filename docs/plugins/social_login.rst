@@ -1,7 +1,7 @@
 .. vale off
 
 Social Login
-============
+############
 
 With Mautic's Social Login, users can easily sign in via their favorite social platforms like Twitter, Facebook, or LinkedIn. The social login feature automatically pre-fills forms with profile data and updates or creates new contacts in Mautic, streamlining the user experience.
 
