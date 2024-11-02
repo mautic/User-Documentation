@@ -8,9 +8,8 @@ This Plugin can send Contacts to MailChimp lists based on Contact actions or Poi
 Authorize
 *********
 
- Get MailChimp API key
- ===========
-
+Get MailChimp API key
+====================
 
 1. Create a MailChimp account.
 2. Go to *Account* / *Extras* / *API Keys* and create a new one.
@@ -28,9 +27,8 @@ Authorize
      :alt: Screenshot of the Name New API Key section with arrows pointing at the test and Generate Key button
      :align: center
 
- Authorize Mautic - MailChimp plugin
-===========
-
+Authorize Mautic - MailChimp plugin
+==================================
 1. Fill in with your MailChimp's account **username** 
 2. Add the **API key**
 3. Click on ***Save & Close***  
@@ -38,7 +36,7 @@ Authorize
 .. vale off
 
 Configure the Plugin
-**********
+******************
 
 .. vale on
 
@@ -67,7 +65,7 @@ Navigate to the *Features* tab in the Plugin configuration modal box. You should
 4. Configure the `field mapping`_.
 
 Other configuration options
-===========
+=========================
 .. vale off
 
 - **Push Contacts to this Integration**
