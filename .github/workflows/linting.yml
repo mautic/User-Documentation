@@ -26,7 +26,6 @@ jobs:
       - name: Vale
         uses: errata-ai/vale-action@reviewdog
         with:
-          # Please keep version in sync with the version in .gitpod.Dockerfile for a consistent experience
           version: 3.7.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -85,6 +84,8 @@ jobs:
       - name: Run DOCtor-RST
         if: env.CHANGED_FILES != ''
         run: |
-          docker run --rm -v "${{ github.workspace }}:/github/workspace" -w /github/workspace oskarstark/doctor-rst --short --error-format=github --cache-file=/github/workspace/.cache/doctor-rst.cache docs/
+          for file in ${{ env.CHANGED_FILES }}; do
+            docker run --rm -v "${{ github.workspace }}:/github/workspace" -w /github/workspace oskarstark/doctor-rst --short --error-format=github --cache-file=/github/workspace/.cache/doctor-rst.cache $file
+          done
         env:
           DOCS_DIR: 'docs/'
