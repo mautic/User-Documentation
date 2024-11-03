@@ -144,7 +144,7 @@ It's possible to delete an Asset by clicking on the 'delete' button while viewin
     Once deleted, you can't retrieve an Asset, and statistics relating to the number of downloads for that Asset are no longer be available. Contact Points accumulated as a result of accessing the resource remain. It's recommended where possible to deactivate Assets which are no longer in use - in future there may be an archive feature.
 
 Display Assets directly in the browser
-============================
+======================================
 
 By default, Mautic supports the following file types for direct display in the browser:
 

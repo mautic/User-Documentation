@@ -24,8 +24,8 @@ You can activate and configure the queuing mechanism by going to configuration:
 
 .. vale off
 
-RabbitMQ
-********
+Using RabbitMQ
+**************
 
 .. vale on
 
@@ -76,8 +76,8 @@ Example:
     'rabbitmq_idle_timeout_exit_code' => 0,
       
 
-Beanstalkd
-**********
+Using Beanstalkd
+****************
 
 :xref:`Beanstalkd` is another available queue protocol that Mautic supports. To use it, you must have a Beanstalkd server running. On :xref:`Beanstalkd website`, you can obtain instructions on how to install Beanstalkd.
    

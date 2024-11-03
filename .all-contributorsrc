@@ -104,6 +104,24 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "uadf",
+      "name": "CPweb",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2785980?v=4",
+      "profile": "https://eglise.catholique.fr",
+      "contributions": [
+        "review"
+      ]
+    },
+    {
+      "login": "heebinho",
+      "name": "Renato Heeb",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1469531?v=4",
+      "profile": "http://renatoheeb.com",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,

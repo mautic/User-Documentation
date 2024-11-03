@@ -1,6 +1,6 @@
 [![Documentation Status][RTD badge URL]][RTD URL]
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-13-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/mautic/user-documentation)
@@ -87,7 +87,7 @@ You can automatically build changes to rst files using a file watcher.
 [RST Cheatsheet]: <https://github.com/ralsina/rst-cheatsheet/blob/master/rst-cheatsheet.rst>
 [Sphinx Template]: <https://github.com/readthedocs/sphinx_rtd_theme/tree/master/docs/demo>
 [Sphinx Demo]: <https://sphinx-rtd-theme.readthedocs.io/en/stable/demo/structure.html>
-[Vale]: <https://docs.errata.ai/vale/install>
+[Vale]: <https://vale.sh/docs/vale-cli/installation/>
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -111,6 +111,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/J-Wick4"><img src="https://avatars.githubusercontent.com/u/1954540?v=4?s=100" width="100px;" alt="John Wick"/><br /><sub><b>John Wick</b></sub></a><br /><a href="https://github.com/mautic/user-documentation/issues?q=author%3AJ-Wick4" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/jagtapreshma"><img src="https://avatars.githubusercontent.com/u/81143250?v=4?s=100" width="100px;" alt="jagtapreshma"/><br /><sub><b>jagtapreshma</b></sub></a><br /><a href="https://github.com/mautic/user-documentation/commits?author=jagtapreshma" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/markusVJH"><img src="https://avatars.githubusercontent.com/u/121946942?v=4?s=100" width="100px;" alt="Markus Heinilä"/><br /><sub><b>Markus Heinilä</b></sub></a><br /><a href="https://github.com/mautic/user-documentation/commits?author=markusVJH" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://eglise.catholique.fr"><img src="https://avatars.githubusercontent.com/u/2785980?v=4?s=100" width="100px;" alt="CPweb"/><br /><sub><b>CPweb</b></sub></a><br /><a href="https://github.com/mautic/user-documentation/pulls?q=is%3Apr+reviewed-by%3Auadf" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://renatoheeb.com"><img src="https://avatars.githubusercontent.com/u/1469531?v=4?s=100" width="100px;" alt="Renato Heeb"/><br /><sub><b>Renato Heeb</b></sub></a><br /><a href="https://github.com/mautic/user-documentation/commits?author=heebinho" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>

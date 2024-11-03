@@ -333,6 +333,10 @@ With Composer you can add new dependencies to install along with Mautic:
   cd your-directory
   composer require mautic/mautic/helloworld-bundle
 
+.. note::
+
+  As this method of installation moves the core app files into a folder called ``docroot`` from which Mautic runs, you should ensure that you configure your web server to serve files from this directory. This might mean updating your virtual host and/or NGINX configuration to have ``<your directory>/docroot`` as the root directory. If you don't do this, it's likely you'll see errors when you try to access your Mautic instance.
+
 The Composer ``create-project`` command passes ownership of all files to the created project. You should create a new git repository, and commit all files not excluded by the .gitignore file.
 
 .. vale off
@@ -344,7 +348,7 @@ What does the Recommended Project template actually do?
 
 When installing the given ``composer.json`` the following occurs:
 
-- Install Mautic in the ``docroot`` directory.
+- Install Mautic in the ``docroot`` directory. See earlier note about updating your hosting configuration.
 - Autoloader uses the generated Composer autoloader in ``vendor/autoload.php``, instead of the one provided by Mautic in ``docroot/vendor/autoload.php``.
 - Plugins - packages of type ``mautic-plugin`` - are in ``docroot/plugins/``.
 - Themes - packages of type ``mautic-theme`` - are in ``docroot/themes/``.
@@ -437,6 +441,10 @@ It's possible to change this folder to your own needs.
 
 In following examples, ``docroot`` moves into ``public``.
 
+.. note::
+
+  Remember that you must also update your web server configuration to point to the new folder.
+
 New installations
 -----------------
 
@@ -444,7 +452,7 @@ New installations
 
 .. code-block:: bash
   
-  composer create-project mautic/recommended-project:^4 some-dir --no-interaction --no-install
+  composer create-project mautic/recommended-project:^5 some-dir --no-interaction --no-install
 
 * Do a find and replace in the ``composer.json`` file to change ``docroot/`` into ``public/``
 * Review the changes in the ``composer.json`` file to ensure that there are no unintentional replacements

@@ -57,7 +57,7 @@ Add new Contact
 
 |
 
-This opens the new Contact screen, where you can enter all the information you have about the Contact. It also displays all published Contact fields when creating a new Contact. 
+This opens the new Contact screen, where you can enter all the information you have about the Contact. It also displays all available Contact fields when creating a new Contact. 
 
 Use the tabs at the top to populate existing Custom Fields and social network profiles. 
 
@@ -504,8 +504,8 @@ All the UTM tags are available in the time entry, just by toggling the entry det
 
 Please note that Mautic records UTM tags only on a Form submission that contains the action "Record UTM Tags".
 
-Contact fields
-~~~~~~~~~~~~~~
+Updating Contact fields
+~~~~~~~~~~~~~~~~~~~~~~~
 
 You can also pass information specific to your Contact by setting Mautic Contact ``field(s)`` to be publicly editable. Note that values appended to the tracking pixel should be ``url`` encoded - %20 for spaces, %40 for @, etc.
 
@@ -523,15 +523,15 @@ If you're using a Content Management System, the easiest way is to let one of th
 
 Here are a couple code snippets that may help as well:
 
-HTML
-~~~~
+HTML snippet
+~~~~~~~~~~~~
 
 .. code-block:: shell
 
     <img src="https://example.com/mtracking.gif?page_url=http%3a%2f%2fexample.com%2fyour-product-page&page_title=Some%20Cool%20Product&email=user%40theirdomain.com&tags=ProductA,-ProductB" style="display: none;"  alt="mautic is open source marketing automation" />
 
-PHP
-~~~
+PHP snippet
+~~~~~~~~~~~
 
 .. code-block:: php
 
@@ -543,8 +543,8 @@ PHP
 
     echo '<img src="https://example.com/mtracking.gif?d=' . $d . '" style="display: none;" />';
 
-JavaScript
-~~~~~~~~~~
+JavaScript snippet
+~~~~~~~~~~~~~~~~~~
 
 .. code-block:: javascript
 

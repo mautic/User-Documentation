@@ -110,6 +110,6 @@ To reset the ownership of files and folders, use the following command - ensurin
 
 .. vale off
 
-This command **ch-**anges **own-**ership, using the ``-R`` flag which means recursively - including all files/folders within that location. Read more about the :xref:`Linux chown command`.
+This command **ch-** anges **own-** ership, using the ``-R`` flag which means recursively - including all files/folders within that location. Read more about the :xref:`Linux chown command`.
 
 .. vale on

@@ -30,7 +30,7 @@ Configure the HubSpot CRM Plugin
 
 .. note:: 
 
-    Be sure to complete all steps before you publish the Plugin.
+    Be sure to complete all steps before you activate the Plugin.
 
 1. Log in to Mautic instance.
 
@@ -63,7 +63,7 @@ Configure the HubSpot CRM Plugin
 
 9. Click **Save** to save the Plugin configuration.
     
-   * If you want to use the Plugin, set the *Publish* switch to **Yes**. Only do this when you have fully configured the Plugin settings.
+   * If you want to use the Plugin, set the *Active* switch to **Yes**. Only do this when you have fully configured the Plugin settings.
 
 10. Set up the :ref:`cron job<configure Mautic integration cron jobs>` if you haven't already configured it.
 

@@ -11,8 +11,8 @@ You may come across limitations with your server configuration when installing o
 
 These are, in general, not errors with Mautic, but with your server configuration. To resolve these issues you need to make some changes to your server configuration.
 
-Requirements
-************
+Resolving issues
+****************
 
 To resolve these problems you require: 
 

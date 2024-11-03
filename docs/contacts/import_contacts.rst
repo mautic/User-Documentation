@@ -172,13 +172,13 @@ How to stop a background import
 
 2. In the top right corner of the Contacts page, open the sub menu of actions and select the :ref:`Import History<import job list>` option.
 
-3. Unpublish the import job you want to stop. The import changes :ref:`status<import job status>` to Stopped. It finishes importing the current batch and then stops.
+3. Deactivate the import job you want to stop. The import changes :ref:`status<import job status>` to Stopped. It finishes importing the current batch and then stops.
 
-4. To start the import again, publish it, and the background job continues with the next :doc:`cron job execution</configuration/cron_jobs>`.
+4. To start the import again, activate it, and the background job continues with the next :doc:`cron job execution</configuration/cron_jobs>`.
 
 .. image:: images/import-publish.png
     :align: center
-    :alt: Screenshot of Import publish
+    :alt: Screenshot of Import activation
 
 |
 

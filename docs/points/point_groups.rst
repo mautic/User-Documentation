@@ -27,25 +27,17 @@ Enter a name and a description for the Group and click the "Save & Close" button
 Point Groups usage
 ===================
 
-Point Actions
--------------
-
-.. vale on
-
+Using Point actions
+-------------------
 You can change Contact's Points within a Points Group by using Points Actions.
 
 .. image:: images/point-action-with-group.png
   :width: 600
   :alt: Screenshot of Points action with Group
 
-.. vale off
-
-Point Triggers
---------------
-
-.. vale on
-
-You can use Point Triggers based on Point Groups to automatically trigger specific events within the system.
+Using Point triggers
+--------------------
+You can use Point triggers based on Point Groups to automatically trigger specific events within the system.
 
 .. image:: images/point-trigger-with-group.png
   :width: 600

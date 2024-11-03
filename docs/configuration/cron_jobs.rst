@@ -73,6 +73,8 @@ By default, the script processes Contacts in batches of 100. If this is too many
 
 You can also limit the number of Contacts to process per script execution using ``--max-events`` to further limit resources used.
 
+Since Mautic 5.1, Mautic triggers Campaigns in order from newest to oldest. This allows you to process newer Campaigns with higher priority.
+
 .. vale off
 
 **To send frequency rules rescheduled marketing Campaign messages:** Messages marked as *Marketing Messages* - such as Emails as part of a marketing Campaign - get held in a message queue IF frequency rules are setup as either system wide or per Contact. To process this queue and reschedule sending these messages, add this cron job:
@@ -157,6 +159,21 @@ To import an especially large number of Contacts or Companies in the background,
 
 The time taken for this command to execute depends on the number of Contacts in the CSV file. However, on successful completion of the import operation, a notification appears on the Mautic dashboard.
 
+.. vale off
+
+Export Contacts cron job
+========================
+
+.. vale on
+
+To export Contacts to CSV - sending the results via Email - use the following command:
+
+.. code-block:: bash
+
+    php /path/to/mautic/bin/console mautic:contacts:scheduled_export
+
+The time taken for this command to execute depends on the number of Contacts in the CSV file. However, on successful completion of the export operation, Mautic sends an email with the link to download the CSV.
+
 Webhooks cron job
 =================
 
@@ -165,6 +182,15 @@ If the Mautic configuration settings include Webhook batch processing, use the f
 .. code-block:: php
 
     php /path/to/mautic/bin/console mautic:webhooks:process
+
+
+Since Mautic 5.1 it's also possible to run the Webhooks cron job in 'range mode'. This allows you to specify a range of Webhook events to process in a single run. This can be useful if you have a large number of Webhook events to process and want to avoid running out of memory. 
+
+To use this mode, you can specify the ``--min-id`` and ``--max-id`` options. For example, to process events for a Webhook with ID of 5, you can specify to only process the events for that Webhook with IDs between 1000 and 2000 using the following command:
+
+.. code-block:: bash
+
+    bin/console mautic:webhooks:process --webhook-id=5 --min-id=1000 --max-id=2000
 
 .. _cron jobs:
 
@@ -315,6 +341,19 @@ These commands work with all available Plugins. To avoid performance issues when
     you can replace ``mautic:plugins:reload`` with ``mautic:plugins:install`` or ``mautic:plugins:update``. 
     They're the same commands with different alias.
 
+Exclude processed entities
+**************************
+
+This feature is particularly useful for managing data and ensuring that entities aren't processed multiple times unnecessarily. The ``--exclude`` option prevents the specified action from re-processing entities that it has already processed.. This option is available for the ``mautic:campaigns:trigger``, ``mautic:campaigns:rebuild``, and ``mautic:segments:update`` commands.
+
+.. code-block:: php
+
+    php /path/to/mautic/bin/console mautic:campaigns:trigger --exclude
+
+.. note ::
+
+    This is particularly useful for scenarios where you want to avoid redundant processing of entities, such as preventing a Campaign or Segment action from executing multiple times for the same Contact.
+
 Tips & troubleshooting
 **********************
 
@@ -338,22 +377,3 @@ Example output
 
 If you have SSH access, try to run the command directly to Select for errors. If there is nothing printed from either in a SSH session or in the cron output, verify in the server's logs. If you see similar errors to ``'Warning: Invalid argument supplied for foreach()' in /vendor/symfony/console/Symfony/Component/Console/Input/ArgvInput.php:287``, you either need to use ``php-cli`` instead of ``php`` or try using ``php -d register_argc_argv=On``. `
 
-Tracking script
-###############
-
-After installation and setup of the :doc:`/configuration/cron_jobs` you're ready to begin tracking Contacts. You need to add a piece of JavaScript to the websites for each site you wish to track through Mautic.
-
-This is straightforward process, you can add this tracking script to your website template file, or install a Mautic Integration for the more common Content Management System platforms. 
-
-Here is an example of the tracking JavaScript which you can access by clicking on **Tracking Settings** in the Global Configuration.
-
-
-.. code-block:: javascript
-
-  (function(w,d,t,u,n,a,m){w['MauticTrackingObject']=n;
-     w[n]=w[n]||function(){(w[n].q=w[n].q||[]).push(arguments)},a=d.createElement(t),
-     m=d.getElementsByTagName(t)[0];a.async=1;a.src=u;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://example.com/mautic/mtc.js','mt');
-   mt('send', 'pageview');
-
-You should replace the site URL, ``example.com/mautic`` with the URL to your Mautic instance in the example provided, but it's recommended to copy the whole code block from the tracking settings in your Mautic instance.
