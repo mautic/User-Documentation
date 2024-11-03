@@ -276,7 +276,10 @@ For example:
 Unsubscribing
 *************
 
-Mautic has a built in means of allowing a Contact to unsubscribe from Email communication. You can insert the tokens ``{unsubscribe_text}`` or ``{unsubscribe_url}`` into your Email to have the text or the URL show at your desired location. The unsubscribe text token inserts a sentence with a link instructing the Contact to click to unsubscribe. 
+Mautic has a built in means of allowing a Contact to unsubscribe from Email communication. You can insert various tokens into your Email to provide unsubscribe options at your desired location:
+- ``{unsubscribe_text}``: Inserts a sentence with a link instructing the Contact to click to unsubscribe.
+- ``{unsubscribe_url}``: Inserts the URL to the preferences center when it's activated, or to the unsubscribe page if not.
+- ``{dnc_url}``: Inserts the URL to unsubscribe from all marketing messages when the preference center is activated.
 
 The unsubscribe URL token inserts the URL into your custom written instructions. 
 
@@ -284,7 +287,8 @@ For example:
 
 .. code-block:: html
 
-        <a href="{unsubscribe_url}" target="_blank">Want to unsubscribe?</a>
+        <a href="{unsubscribe_url}" target="_blank">Manage your email preferences</a>
+        <a href="{dnc_url}" target="_blank">Unsubscribe from all emails</a>
 
 You can find the configuration of the unsubscribe text in the global settings.
 
