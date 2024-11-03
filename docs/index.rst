@@ -167,7 +167,6 @@ There are different types of documentation available to help you navigate your w
    plugins/clearbit
    plugins/connectwise
    plugins/fullcontact
-   plugins/gmail
    plugins/hubspot
    plugins/icontact
    plugins/mailchimp
