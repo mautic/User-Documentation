@@ -61,7 +61,7 @@ epub_show_urls = 'footnote'
 
 # -- Internationalisation configuration
 
-locale_dirs = 'locale'
+locale_dirs = ['locale']
 
 # Please add links here that do not pass the "make checklinks" check.
 # A little context on the reason for ignoring is greatly appreciated!
@@ -76,4 +76,11 @@ linkcheck_ignore = [
     r"https://api-ssl.bitly.com/*",
     #This domain blocks the checker.
     r"https://linuxize.com/*",
+    # The GitHub Search UI requires users to be authenticated with session cookies, which we can't set up programmatically
+    r"https://github.com/search*",
+    # Requires authentication.
+    r"https://www.maxmind.com/en/accounts/current*",
+    # The URLs below broken and should be replaced by working ones.
+    r"https://staffwww.fullcoll.edu/sedwards/Nano/NanoKeyboardCommands.html",
+    r"https://blog.maxmind.com/search-results*"
 ]

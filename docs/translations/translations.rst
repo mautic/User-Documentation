@@ -89,7 +89,7 @@ GitHub has also an option to search for strings in the repository - it's not par
 
 Try searching for 'Dashboard menu' within the Mautic/Mautic repository, as there is special translation for the menu item and another for the page title. GitHub won't find the right translation when you search for just 'Dashboard' - it requires the full string. Next, use the filter to show only INI files. Here is the link to the search result:
 
-`https://github.com/mautic/mautic/search?l=INI&q=Dashboard+menu <https://github.com/mautic/mautic/search?l=INI&q=Dashboard+menu>`_
+:xref:`Mautic INI files`
 
 The first file found is ``app/bundles/DashboardBundle/Translations/en_US/messages.ini`` and there is the line ``mautic.dashboard.menu.index="Dashboard"`` within the file, which is text to override.
 
