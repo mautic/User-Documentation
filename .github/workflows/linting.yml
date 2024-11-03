@@ -34,57 +34,58 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
-        cache: 'pip'
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          cache: 'pip'
 
-    - name: Install Python dependencies
-      run: pip3 install -r docs/requirements.txt
+      - name: Install Python dependencies
+        run: pip3 install -r docs/requirements.txt
     
-    - name: Build docs
-      working-directory: docs
-      run: make html
+      - name: Build docs
+        working-directory: docs
+        run: make html
 
-    - name: Check links
-      working-directory: docs
-      run: make checklinks
+      - name: Check links
+        working-directory: docs
+        run: make checklinks
 
   doctor_rst:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0  # Ensures full history is fetched
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Ensures full history is fetched
 
-    - name: Extract base branch name
-      run: echo "##[set-output name=branch;]$(echo ${GITHUB_BASE_REF:=${GITHUB_REF##*/}})"
-      id: extract_base_branch
+      - name: Extract base branch name
+        run: echo "branch=$(echo ${GITHUB_BASE_REF:=${GITHUB_REF##*/}})" >> $GITHUB_ENV
+        id: extract_base_branch
 
-    - name: Get Changed Files
-      id: changes
-      run: |
-        git fetch origin ${{ github.event.pull_request.base.ref }}  # Fetch the base branch
-        CHANGED_FILES=$(git diff --name-only origin/${{ github.event.pull_request.base.ref }} ${{ github.sha }} | grep '^docs/' | tr '\n' ' ')
-        echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
+      - name: Get Changed Files
+        id: changes
+        run: |
+          git fetch origin ${{ github.event.pull_request.base.ref }}  # Fetch the base branch
+          CHANGED_FILES=$(git diff --name-only origin/${{ github.event.pull_request.base.ref }} ${{ github.sha }} | grep '^docs/' | tr '\n' ' ')
+          echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
 
-    - name: Cache DOCtor-RST
-      uses: actions/cache@v2
-      with:
-        path: .cache
-        key: doctor-rst-${{ runner.os }}-${{ steps.extract_base_branch.outputs.branch }}
-        restore-keys: |
-          doctor-rst-${{ runner.os }}-
-          doctor-rst-
+      - name: Cache DOCtor-RST
+        uses: actions/cache@v2
+        with:
+          path: .cache
+          key: doctor-rst-${{ runner.os }}-${{ env.branch }}
+          restore-keys: |
+            doctor-rst-${{ runner.os }}-
+            doctor-rst-
 
-    - name: Run DOCtor-RST
-      if: env.CHANGED_FILES != ''
-      uses: docker://oskarstark/doctor-rst
-      with:
-        args: --short --error-format=github
-      env:
-        DOCS_DIR: 'docs/'
+      - name: Run DOCtor-RST
+        if: env.CHANGED_FILES != ''
+        uses: docker://oskarstark/doctor-rst
+        with:
+          args: --short --error-format=github ${{ env.CHANGED_FILES }}
+        env:
+          DOCS_DIR: 'docs/'
