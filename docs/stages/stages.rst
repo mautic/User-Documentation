@@ -30,7 +30,7 @@ Navigate to the **Stages** section in the left side menu, and then click **+New*
 
 **Category** - Assign a Category to help you organize your Stages. For more information, see :ref:`categories`.
 
-**Publish options** - The dashboard widget doesn't display data for an unpublished Stage. In addition, the Segment filters or Campaign conditions don't display the Stage. To avoid using the Stage while building it, set a future publish date and time. If you want the Stage to become unavailable after a certain time, set the date and time for unpublishing.
+**Activation options** - The dashboard widget doesn't display data for an inactive Stage. In addition, the Segment filters or Campaign conditions don't display the Stage. To avoid using the Stage while building it, set a future activation date and time. If you want the Stage to become unavailable after a certain time, set the date and time for deactivating.
 
 .. vale off
 

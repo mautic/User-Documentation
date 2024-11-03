@@ -335,11 +335,11 @@ See :ref:`here<contact's unsubscribe email preferences>` to set the Contact's Em
 Default frequency rule
 ======================
 
+* **Do Not Contact more than <number> each <period>** - This limits the number of Marketing Messages a Contact receives in a certain period of time day, week, month. Transactional messages don't count towards this limit. You can adjust this at the individual Contact level, either manually or by Preference Center setting.
+
 .. image:: images/default-frequency-rule.png
   :width: 600
   :alt: Screenshot showing Default Frequency Rule Configuration in Mautic
-
-* **Do not contact more than <number> each <period>** - This limits the number of Marketing Messages a Contact receives in a certain period of time day, week, month. Transactional messages don't count towards this limit. You can adjust this at the individual Contact level, either manually or by Preference Center setting.
 
 .. note:: 
 
@@ -394,7 +394,7 @@ Unsubscribe settings
 
 * **Show Contact preference settings** - Select **Yes** to direct the unsubscribe link to your configured Preference enter. If you haven't created a Preference Center, Mautic creates a default page based on the next 5 settings. The created page uses the default Theme for styling.
 
-* **Show Contact Segment preferences** - Select **Yes** to allow a Contact to change which Segments they're part of on the Preference Center page. Segments won't display on the Preference Center page if they aren't published and public.
+* **Show Contact Segment preferences** - Select **Yes** to allow a Contact to change which Segments they're part of on the Preference Center. Segments won't display on the Preference Center if they aren't active and public.
 
 * **Show Contact frequency preferences** - Select **Yes** to allow an individual to limit the number of Marketing Messages they receive on each Channel from the Preference Center.
 
@@ -468,7 +468,16 @@ Import settings
   :alt: Screenshot showing Import Settings Configuration in Mautic
 
 * **Automatically import in the background if the CSV has more rows than defined** - If there are more than the specified number of rows in an import file, the CSV automatically sets to import in the background which requires a :ref:`cron job<import contacts cron job>` to trigger. Set to 0 if you want to always import files in the background recommended for performance optimization.
-   
+
+Export settings
+===============
+
+.. image:: images/export-settings.png
+  :width: 600
+  :alt: Screenshot showing Export Settings Configuration in Mautic
+
+* **Automatically export Contacts to CSV in the background** - If set to Yes, Mautic processes CSV exports of Contacts in the background and Mautic sends an Email with a link to download the file when it's processed.
+
 Segment settings
 ****************
 
@@ -627,9 +636,9 @@ Notification settings
   :width: 600
   :alt: Screenshot showing Webhook Notification Settings Configuration in Mautic
 
-If a Campaign or Webhook is automatically unpublished because of a high volume of errors, Mautic sends a notification alerting Users.
+If a Campaign or Webhook is automatically deactivated because of a high volume of errors, Mautic sends a notification alerting Users.
 
-* **Send notification to author** - Set this field to Yes to send an Email notification to the User who created the unpublished Campaign or Webhook. Deleted Users don't receive notifications.
+* **Send notification to author** - Set this field to Yes to send an Email notification to the User who created the deactivated Campaign or Webhook. Deleted Users don't receive notifications.
 
 .. vale off
 

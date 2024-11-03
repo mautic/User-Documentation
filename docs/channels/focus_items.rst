@@ -31,8 +31,6 @@ For each type of Focus Item, there are settings to configure which control the t
     :width: 400
     :alt: Screenshot showing the engagement settings for Focus Items.
 
-.. vale off 
-
 - **Animate** - When set to Yes, this applies a slide-in animation to the Focus Item. When set to No, the item appears without any kind of sliding motion.
 - **When to engage** - This setting controls the Focus Item shows. There are several options:
    - **Upon arrival** - As soon as a visitor lands on the page
@@ -49,8 +47,7 @@ For each type of Focus Item, there are settings to configure which control the t
    - **Once per hour** -  Show the Focus Item once every hour that the visitor is on your website
    - **Once per day** - Show the Focus Item once per day that the visitor is on your website
 - **Stop engaging after a conversion** - This option is only available for the types which track a conversion (Collect Data and Emphasize a Link).  If set to Yes, the Focus Item no longer displays if the visitor has either submitted the Form (Collect Data type) or clicked on the link (Emphasize a Link type).
-
-.. vale on
+- **Stop engaging after closing Focus** - This option is available for Focus Items and uses cookies. If set to Yes, the Focus Item no longer displays to the visitor after they have interacted with it, until they clear their cookies.
 
 Styles
 ======
@@ -157,13 +154,13 @@ When creating a new Focus Item, you can set the following fields:
 
 **Category** - Assign a Category to help you organize your Focus Items.
 
-**Published** - Whether the Focus Item is available for use - published - or not available - unpublished
+**Active** - Whether the Focus Item is available for use - active - or not available - inactive.
 
 .. vale off
 
-**Publish at (date/time)** - This allows you to define the date and time at which this Text Message is available for sending to Contacts
+**Activate at (date/time)** - This allows you to define the date and time at which this Text Message is available for sending to Contacts
 
-**Unpublish at (date/time)** - This allows you to define the date and time at which this Text Message ceases to be available for sending to Contacts.
+**Deactivate at (date/time)** - This allows you to define the date and time at which this Text Message ceases to be available for sending to Contacts.
 
 .. vale on
 
@@ -198,7 +195,7 @@ You can use the menu on the sidebar to configure the Focus Item to your liking. 
 Using Focus Items
 *****************
 
-Once you have created your Focus Item, you're ready to publish it to your website. If you're not quite ready for the Focus Item to go live but you need to get it set up on your website, you can set the Focus Item to Unpublished.
+Once you have created your Focus Item, you're ready to activate it to your website. If you're not quite ready for the Focus Item to go live but you need to get it set up on your website, set the Focus Item to inactive.
 
 Deploying to a website
 ======================

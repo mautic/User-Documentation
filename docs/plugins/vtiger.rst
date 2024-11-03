@@ -31,7 +31,7 @@ To authenticate the Mautic Plugin to be able to communicate with Vtiger CRM you'
 
 * Vtiger username - The username, email address usually, which you use to log in to your Vtiger.
 
-* Vtiger access key - The access key published in your Vtiger profile. To get it, go to Vtiger's **My Preferences**. The Access Key hash is at the bottom of the page.
+* Vtiger access key - The access key activated in your Vtiger profile. To get it, go to Vtiger's **My Preferences**. The Access Key hash is at the bottom of the page.
 
 .. image:: images/vtiger-mautic.png
   :alt: Screenshot of Vtiger Mautic Integration
@@ -49,9 +49,9 @@ Configure the Vtiger CRM Plugin
 
 .. vale on
 
-If you want to use the Plugin, you have to publish it. 
+If you want to use the Plugin, you have to activate it. 
 
-1. Set the *Publish* switch to **Yes**.
+1. Set the *Active* switch to **Yes**.
 
 2. In the **Features tab** is Push Contacts to this Integration checkbox and it's checked by default.
 

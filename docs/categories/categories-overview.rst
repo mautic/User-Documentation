@@ -19,22 +19,22 @@ Creating and managing Categories
 
 To create new Categories, go to settings menu in the top right corner of Mautic. There choose Categories.
 
-.. image:: images/create-new-category.jpeg
+.. image:: images/create-new-category.png
   :width: 600
   :alt: Screenshot of create new Category
 
 .. vale off
 
-When creating a new Category you can select type, title, description, alias, color and published status. The color will be helpful to quickly find Mautic elements by their appropriate Category when viewing things like the Calendar or other areas within Mautic.
+When creating a new Category you can select type, title, description, alias, color and availability status. The color will be helpful to quickly find Mautic elements by their appropriate Category when viewing other areas within Mautic.
 
 Using Categories for Contacts
 ******************************
 
 .. vale on
 
-In addition to organizing various Mautic elements Categories can help you organize Contacts. In Contact details use the Preference menu to open Contact Preference Center.
+In addition to organizing various Mautic elements, Categories can help you organize Contacts. In Contact details use the Preference menu to open Contact Preference Center.
 
-.. image:: images/assign-category-to-contact.jpeg
+.. image:: images/assign-category-to-contact.png
   :width: 600
   :alt: Screenshot of assigning Category to Contact
 
