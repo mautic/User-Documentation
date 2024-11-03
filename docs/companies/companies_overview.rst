@@ -9,7 +9,7 @@ Companies are a way to group Contacts based on association with organizations.
   :alt: Mautic Company Overview
   
 Engagements/Points chart
-*************************
+***********************
 
 Engagements shown on the chart include any tracked action the Contacts made. Some examples might include page hits, Form submissions, Email opens and so on. The engagements line chart displays how active the Contacts of the Company were in the past 6 months. The chart displays also the sum of Points the Contacts received.
 
