@@ -5,7 +5,7 @@ Creating Campaigns
 
 .. vale on
 
-Creating Campaigns is a central part of the marketing automation process. When you create a new Campaign, you perform the basic administrative tasks such as choosing a name for the Campaign, creating a description, assigning a Category and defining publishing information for the Campaign.
+Creating Campaigns is a central part of the marketing automation process. When you create a new Campaign, you perform the basic administrative tasks such as choosing a name for the Campaign, creating a description, assigning a Category and defining activating information for the Campaign.
 
 At the heart of any marketing automation Campaign is the Campaign Builder. This allows you to specify how Contacts enter the Campaign, and what happens at every point after they enter the workflow.
 
@@ -51,7 +51,7 @@ To begin creating Campaigns, perform the following steps:
 
 -  **Category** - Choose a Category to assign your Campaign to. Categories help you organize your Campaigns. To learn more about creating and managing Categories, see :doc:`/categories/categories-overview`.
 -  **Allow Contacts to restart the Campaign** - Click the toggle switch to allow Contacts to restart the Campaign if you're building a Campaign for a recurring message - for example birthdays, subscriptions - or transactional operations - for example activity notifications, updating data. Enabling this option allows Contacts to go through the same Campaign multiple times.
--  **Published** - Click the toggle switch to publish or un-publish the Campaign. Ensure that you don't publish a Campaign until you're actually ready for it to go live. You can also schedule to publish or un-publish a Campaign at a future date by selecting a time and date.
+-  **Active** - Click the toggle switch to turn the Campaign on or off. Ensure that you don't activate a Campaign until you're actually ready for it to go live. You can also schedule to activate or deactivate a Campaign at a future date by selecting a time and date.
 
 #. Click **Launch Campaign Builder** to start building your Campaign, and add at least one event. For information about how to use the
    Campaign Builder, see :doc:`/campaigns/creating_campaigns`.

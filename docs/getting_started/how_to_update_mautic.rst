@@ -10,6 +10,9 @@ There are two ways to update Mautic:
 1. Using the Command Line - recommended
 2. Through the User interface
 
+.. note::
+    If you installed Mautic using Composer or switched to a Composer-based install, jump straight to the :ref:`Updating Mautic (Composer based installs)` section below.
+
 If your instance is in production, has a large number of Contacts and/or is  on shared hosting, it's **strongly** recommended that you update at the command line.
 
 .. warning::
@@ -22,50 +25,12 @@ Before you commence updating Mautic, **please ensure that you have a tested back
 
 This means that you have downloaded the files and database of your Mautic instance, and you have re-created it in a test environment somewhere and tested that everything is working as expected. This is your only recourse if there are any problems with the update. Never update without having a working, up-to-date backup.
 
-Updating Mautic (Composer based installs)
-*****************************************
-
-The Recommended Project attempts to keep all of your Mautic core files up-to-date.
-
-The project ``mautic/core-composer-scaffold`` updates your scaffold files whenever there is an update to ``mautic/core-lib``.
-
-If you customize any of the 'scaffolding' files - commonly ``.htaccess`` - you may need to merge conflicts if new release of Mautic results in changes to your modified files.
-
-Follow the steps below to update your core files.
-
-1. Backup your ``composer.lock`` and ``composer.json`` file. If something doesn't work as expected during the ``composer update`` command, restore them and run ``composer install`` to return your codebase to the state it was in before attempting to update.
-
-2. Edit the ``composer.json`` file, and change all previous versions with the version you wish to update to for all Mautic packages.
-
-    * If you are running ``5.0.4`` and want to update to ``5.1.0``, replace ``5.0.4`` with ``5.1.0`` for all packages that start with ``mautic/`` and currently use ``5.0.4``.
-    * You may also need to increase the versions of any other packages you have either manually added or added through :ref:`Mautic Marketplace`.
-    * If you haven't added any extra packages, you can also replace the entire ``composer.json`` file with the newer version from the `repository <https://github.com/mautic/recommended-project>`_ that matches your desired target version.
-
-3. Run ``composer update --with-dependencies`` to update all packages.
-
-4. Run ``git diff`` to determine if any of the scaffolding files have changed. Review the files for any changes and restore any customizations to ``.htaccess`` or others.
-
-5. Commit everything all together in a single commit, so the ``docroot`` remains in sync with the core when checking out branches or running ``git bisect``.
-
-6. In the event that there are non-trivial conflicts in step 2, you may wish to perform these steps on a branch, and use ``git merge`` to combine the updated core files with your customized files. This facilitates the use of a three-way merge tool such as :xref:`kdiff3`. This setup isn't necessary if your changes are simple - keeping all of your modifications at the beginning or end of the file is a good strategy to keep merges easy.
-
-7. Run the following commands to update your database with any changes from the release:
-
-.. code-block:: shell
-
-    bin/console cache:clear
-    bin/console mautic:update:apply --finish
-    bin/console doctrine:migration:migrate --no-interaction
-    bin/console doctrine:schema:update --no-interaction --force
-    bin/console cache:clear
-
-
 Checking for updates at the command line
 ========================================
 
 From Mautic 6, the default way to install, update and manage Mautic changes to Composer. 
 
-Since Mautic 4.2 deprecated the update feature within the Mautic User interface, you still receive a notification when a new version of Mautic is available until removal of this feature but it's recommended to update via the command line. 
+Since Mautic 4.2 deprecated the update feature within the Mautic User interface, you still receive a notification when a new version of Mautic is available until removal of this feature, but it's recommended to update via the command line. 
 
 .. image:: images/gui-update-deprecated.png
   :width: 700
@@ -109,6 +74,42 @@ Next, a prompt displays asking you to run the command again with this additional
 
    php bin/console mautic:update:apply --finish
 
+Updating Mautic (Composer based installs)
+*****************************************
+
+The Recommended Project attempts to keep all of your Mautic core files up-to-date.
+
+The project ``mautic/core-composer-scaffold`` updates your scaffold files whenever there is an update to ``mautic/core-lib``.
+
+If you customize any of the 'scaffolding' files - commonly ``.htaccess`` - you may need to merge conflicts if new release of Mautic results in changes to your modified files.
+
+Follow the steps below to update your core files.
+
+1. Backup your ``composer.lock`` and ``composer.json`` file. If something doesn't work as expected during the ``composer update`` command, restore them and run ``composer install`` to return your codebase to the state it was in before attempting to update.
+
+2. Edit the ``composer.json`` file, and change all previous versions with the version you wish to update to for all Mautic packages.
+
+    * If you are running ``5.0.4`` and want to update to ``5.1.0``, replace ``5.0.4`` with ``5.1.0`` for all packages that start with ``mautic/`` and currently use ``5.0.4``.
+    * You may also need to increase the versions of any other packages you have either manually added or added through :ref:`Mautic Marketplace`.
+    * If you haven't added any extra packages, you can also replace the entire ``composer.json`` file with the newer version from the `repository <https://github.com/mautic/recommended-project>`_ that matches your desired target version.
+
+3. Run ``composer update --with-dependencies`` to update all packages.
+
+4. Run ``git diff`` to determine if any of the scaffolding files have changed. Review the files for any changes and restore any customizations to ``.htaccess`` or others.
+
+5. Commit everything all together in a single commit, so the ``docroot`` remains in sync with the core when checking out branches or running ``git bisect``.
+
+6. In the event that there are non-trivial conflicts in step 2, you may wish to perform these steps on a branch, and use ``git merge`` to combine the updated core files with your customized files. This facilitates the use of a three-way merge tool such as :xref:`kdiff3`. This setup isn't necessary if your changes are simple - keeping all of your modifications at the beginning or end of the file is a good strategy to keep merges easy.
+
+7. Run the following commands to update your database with any changes from the release:
+
+.. code-block:: shell
+
+    bin/console cache:clear
+    bin/console mautic:update:apply --finish
+    bin/console doctrine:migration:migrate --no-interaction
+    bin/console doctrine:schema:update --no-interaction --force
+    bin/console cache:clear
 
 Updating in the browser
 ***********************

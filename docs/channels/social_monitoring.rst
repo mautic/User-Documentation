@@ -42,13 +42,13 @@ When selecting the Twitter Mention monitoring method, the following fields are a
 
 There are also the standard Mautic fields available:
 
-**Published** - This allows you to set the published status of the Social Monitor. Unpublished Social Monitors won't collect new Contacts.
+**Active** - This allows you to set the activation status of the Social Monitor. Deactivated Social Monitors won't collect new Contacts.
 
 .. vale off
 
-**Publish at (date/time)** - This allows you to define the date and time at which this Social Monitor is monitoring for new Contacts. You might use this to coincide with an event, for example.
+**Activate at (date/time)** - This allows you to define the date and time at which this Social Monitor is monitoring for new Contacts. You might use this to coincide with an event, for example.
 
-**Unpublish at (date/time)** - This allows you to define the date and time at which this Social Monitor is monitoring for new Contacts.
+**Deactivate at (date/time)** - This allows you to define the date and time at which this Social Monitor is monitoring for new Contacts.
 
 .. vale on
 
@@ -69,13 +69,13 @@ When selecting the Twitter Hashtags monitoring method, the following fields are 
 
 There are also the standard Mautic fields available:
 
-**Published** - This allows you to set the published status of the Social Monitor. Unpublished Social Monitors won't collect new Contacts.
+**Active** - This allows you to set the activation status of the Social Monitor. Deactivated Social Monitors won't collect new Contacts.
 
 .. vale off
 
-**Publish at (date/time)** - This allows you to define the date and time at which this Social Monitor is monitoring for new Contacts. This might be used to coincide with an event, for example.
+**Activate at (date/time)** - This allows you to define the date and time at which this Social Monitor is monitoring for new Contacts. This might be used to coincide with an event, for example.
 
-**Unpublish at (date/time)** - This allows you to define the date and time at which this Social Monitor ceases to monitor for new Contacts.
+**Deactivate at (date/time)** - This allows you to define the date and time at which this Social Monitor ceases to monitor for new Contacts.
 
 .. vale on
 
