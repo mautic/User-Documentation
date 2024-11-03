@@ -61,15 +61,6 @@ jobs:
       run: |
         echo "CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep '^docs/' | tr '\n' ' ')" >> $GITHUB_ENV
 
-    - name: Cache DOCtor-RST
-      uses: actions/cache@v2
-      with:
-        path: .cache
-        key: doctor-rst-${{ runner.os }}-${{ steps.extract_base_branch.outputs.branch }}
-        restore-keys: |
-          doctor-rst-${{ runner.os }}-
-          doctor-rst-
-
     - name: Run DOCtor-RST
       if: env.CHANGED_FILES != ''
       uses: docker://oskarstark/doctor-rst
