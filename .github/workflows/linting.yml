@@ -83,9 +83,8 @@ jobs:
             doctor-rst-
 
       - name: Run DOCtor-RST
-        if: ${{ env.CHANGED_FILES != '' }}
-        uses: docker://oskarstark/doctor-rst
-        with:
-          args: --short --error-format=github docs/ --cache-file=/github/workspace/.cache/doctor-rst.cache
+        if: env.CHANGED_FILES != ''
+        run: |
+          docker run --rm -v $(pwd):/github/workspace oskarstark/doctor-rst --short --error-format=github --cache-file=/github/workspace/.cache/doctor-rst.cache docs/
         env:
           DOCS_DIR: 'docs/'
