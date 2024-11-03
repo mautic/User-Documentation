@@ -26,6 +26,7 @@ jobs:
       - name: Vale
         uses: errata-ai/vale-action@reviewdog
         with:
+          # Please keep version in sync with the version in .gitpod.Dockerfile for a consistent experience
           version: 3.7.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -61,29 +62,20 @@ jobs:
         with:
           fetch-depth: 0  # Ensures full history is fetched
 
-      - name: Extract base branch name
-        run: echo "branch=$(echo ${GITHUB_BASE_REF:=${GITHUB_REF##*/}})" >> $GITHUB_ENV
+      - name: "Create cache dir"
+        run: mkdir .cache
+
+      - name: "Extract base branch name"
+        run: echo "branch=$(echo ${GITHUB_BASE_REF:=${GITHUB_REF##*/}})" >> $GITHUB_OUTPUT
         id: extract_base_branch
 
-      - name: Get Changed Files
-        id: changes
-        run: |
-          git fetch origin ${{ github.event.pull_request.base.ref }}  # Fetch the base branch
-          CHANGED_FILES=$(git diff --name-only origin/${{ github.event.pull_request.base.ref }} ${{ github.sha }} | grep '^docs/' | grep -v '.doctor-rst.yaml' | tr '\n' ' ')
-          echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
-
-      - name: Cache DOCtor-RST
-        uses: actions/cache@v2
+      - name: "Cache DOCtor-RST"
+        uses: actions/cache@v3
         with:
           path: .cache
-          key: doctor-rst-${{ runner.os }}-${{ env.branch }}
-          restore-keys: |
-            doctor-rst-${{ runner.os }}-
-            doctor-rst-
+          key: ${{ runner.os }}-doctor-rst-${{ steps.extract_base_branch.outputs.branch }}
 
-      - name: Run DOCtor-RST
-        if: env.CHANGED_FILES != ''
-        run: |
-          for file in ${{ env.CHANGED_FILES }}; do
-            docker run --rm -v "${{ github.workspace }}:/github/workspace" -w /github/workspace/docs oskarstark/doctor-rst --short --error-format=github --cache-file=/github/workspace/.cache/doctor-rst.cache $(basename $file)
-          done
+      - name: "Run DOCtor-RST"
+        uses: docker://oskarstark/doctor-rst:1.61.1
+        with:
+          args: --short --error-format=github --cache-file=/github/workspace/.cache/doctor-rst.cache
