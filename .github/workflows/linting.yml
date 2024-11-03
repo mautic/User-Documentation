@@ -85,7 +85,7 @@ jobs:
         if: env.CHANGED_FILES != ''
         run: |
           for file in ${{ env.CHANGED_FILES }}; do
-            docker run --rm -v "${{ github.workspace }}:/github/workspace" -w /github/workspace oskarstark/doctor-rst --short --error-format=github --config /github/workspace/docs/.doctor-rst.yaml --cache-file=/github/workspace/.cache/doctor-rst.cache $file
+            docker run --rm -v "${{ github.workspace }}:/github/workspace" -w /github/workspace/docs oskarstark/doctor-rst --short --error-format=github --cache-file=/github/workspace/.cache/doctor-rst.cache $file
           done
         env:
           DOCS_DIR: 'docs/'
