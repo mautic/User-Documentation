@@ -86,6 +86,6 @@ jobs:
         if: env.CHANGED_FILES != ''
         uses: docker://oskarstark/doctor-rst
         with:
-          args: --short --error-format=github ${{ env.CHANGED_FILES }}
+          args: --short --error-format=github docs/
         env:
           DOCS_DIR: 'docs/'
