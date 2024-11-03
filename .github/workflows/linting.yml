@@ -48,9 +48,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-
-    - name: Create cache dir
-      run: mkdir .cache
+      with:
+        fetch-depth: 0  # Ensures full history is fetched
 
     - name: Extract base branch name
       run: echo "##[set-output name=branch;]$(echo ${GITHUB_BASE_REF:=${GITHUB_REF##*/}})"
@@ -59,12 +58,23 @@ jobs:
     - name: Get Changed Files
       id: changes
       run: |
-        echo "CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep '^docs/' | tr '\n' ' ')" >> $GITHUB_ENV
+        git fetch origin ${{ github.event.pull_request.base.ref }}  # Fetch the base branch
+        CHANGED_FILES=$(git diff --name-only origin/${{ github.event.pull_request.base.ref }} ${{ github.sha }} | grep '^docs/' | tr '\n' ' ')
+        echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
+
+    - name: Cache DOCtor-RST
+      uses: actions/cache@v2
+      with:
+        path: .cache
+        key: doctor-rst-${{ runner.os }}-${{ steps.extract_base_branch.outputs.branch }}
+        restore-keys: |
+          doctor-rst-${{ runner.os }}-
+          doctor-rst-
 
     - name: Run DOCtor-RST
       if: env.CHANGED_FILES != ''
       uses: docker://oskarstark/doctor-rst
       with:
-        args: --short --error-format=github --cache-file=/github/workspace/.cache/doctor-rst.cache ${{ env.CHANGED_FILES }}
+        args: --short --error-format=github
       env:
         DOCS_DIR: 'docs/'
