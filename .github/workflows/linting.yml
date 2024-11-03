@@ -61,13 +61,16 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Ensures full history is fetched
+          ref: ${{ steps.extract_base_branch.outputs.branch }}
+          path: base
+      - name: Get changed files
+        id: changed_files
+        run: |
+          git fetch origin ${{ steps.extract_base_branch.outputs.branch }}:refs/remotes/origin/${{ steps.extract_base_branch.outputs.branch }}
+          git diff --name-only origin/${{ steps.extract_base_branch.outputs.branch }}...HEAD > changed_files.txt
 
       - name: "Create cache dir"
         run: mkdir .cache
-
-      - name: "Extract base branch name"
-        run: echo "branch=$(echo ${GITHUB_BASE_REF:=${GITHUB_REF##*/}})" >> $GITHUB_OUTPUT
-        id: extract_base_branch
 
       - name: "Cache DOCtor-RST"
         uses: actions/cache@v3
@@ -78,6 +81,6 @@ jobs:
       - name: "Run DOCtor-RST"
         uses: docker://oskarstark/doctor-rst:1.61.1
         with:
-          args: --short --error-format=github --cache-file=/github/workspace/.cache/doctor-rst.cache
+          args: --short --error-format=github --cache-file=/github/workspace/.cache/doctor-rst.cache $(cat changed_files.txt | grep '^docs/')
         env:
             DOCS_DIR: 'docs/'
