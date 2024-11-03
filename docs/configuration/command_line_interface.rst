@@ -90,7 +90,7 @@ These are the commands you may need to use in relation to your Mautic instance. 
      - Rebuild Campaigns based on Contact Segments.
      - ``mautic:campaigns:update``
    * - ``mautic:campaigns:trigger``
-     - Trigger timed events for published Campaigns.
+     - Trigger timed events for active Campaigns.
      - 
    * - ``mautic:campaigns:validate``
      - Validate if a Contact has been inactive for a decision and execute events if so.

@@ -37,7 +37,7 @@ Creating a Segment
 
 * **Available in Preference Center** - If set to **Yes**, Contacts can see and opt into or out of the Segment on a **Preference Center** page. The Segments display if the Preference Center has the **Segment List** slot type.
 
-* **Published** - If set to **No**, the Segment won't be available for use in filters for other Segments, as a Contact source in Campaigns, modify Segment actions, etc. You'll still see the Segment in your **Segment list**, but it essentially won't exist anywhere else in Mautic.
+* **Active** - If set to **No**, the Segment won't be available for use in filters for other Segments, as a Contact source in Campaigns, modify Segment actions, etc. You'll still see the Segment in your **Segment list**, but it essentially won't exist anywhere else in Mautic.
 
 On the Details tab, static, and dynamic Segments also have the option to display a different public name for a Segment.
 
@@ -500,15 +500,15 @@ It's necessary to configure the :ref:`cron jobs<segment cron jobs>`.
 
 .. vale off
 
-Deleting or unpublishing a Segment
+Deleting or deactivating a Segment
 **********************************
 
 .. vale on
 
-Since :xref:`Mautic 4` there is a step when deleting or unpublishing a Segment to ensure that it's not required as a filter by an existing Segment.
+Since :xref:`Mautic 4` there is a step when deleting or deactivating a Segment to ensure that it's not required as a filter by an existing Segment.
 
 .. image:: images/deleting-used-segment.png
     :width: 300
-    :alt: Screenshot deleting or unpublishing a Segment
+    :alt: Screenshot deleting or deactivating a Segment
 
-If you attempt to delete or unpublish a Segment which is in use by a filter in another Segment, an alert prompts you to edit the other Segment, removing the dependency before you delete the Segment.
+If you attempt to delete or deactivate a Segment which is in use by a filter in another Segment, an alert prompts you to edit the other Segment, removing the dependency before you delete the Segment.
