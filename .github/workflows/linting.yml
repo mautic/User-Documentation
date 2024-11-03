@@ -85,6 +85,6 @@ jobs:
       - name: Run DOCtor-RST
         if: env.CHANGED_FILES != ''
         run: |
-          docker run --rm -v $(pwd):/github/workspace oskarstark/doctor-rst --short --error-format=github --cache-file=/github/workspace/.cache/doctor-rst.cache docs/
+          docker run --rm -v "${{ github.workspace }}:/github/workspace" -w /github/workspace oskarstark/doctor-rst --short --error-format=github --cache-file=/github/workspace/.cache/doctor-rst.cache docs/
         env:
           DOCS_DIR: 'docs/'
