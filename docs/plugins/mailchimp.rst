@@ -1,5 +1,3 @@
-.. vale off
-
 MailChimp
 #########
 
@@ -9,7 +7,7 @@ Authorize
 *********
 
 Get MailChimp API key
-====================
+=====================
 
 1. Create a MailChimp account.
 2. Go to *Account* / *Extras* / *API Keys* and create a new one.
@@ -27,16 +25,16 @@ Get MailChimp API key
      :alt: Screenshot of the Name New API Key section with arrows pointing at the test and Generate Key button
      :align: center
 
-Authorize Mautic - MailChimp plugin
-==================================
+.. vale off
+
+Authorize Mautic - MailChimp Plugin
+===================================
 1. Fill in with your MailChimp's account **username** 
 2. Add the **API key**
 3. Click on ***Save & Close***  
 
-.. vale off
-
 Configure the Plugin
-******************
+********************
 
 .. vale on
 
@@ -49,7 +47,7 @@ Navigate to the *Features* tab in the Plugin configuration modal box. You should
    
    .. vale on
 
-.. image:: plugins-mailchimp-configure.png
+.. image:: images/plugins-mailchimp-configure.png
    :alt: MailChimp Plugin configuration
    :align: center
 
@@ -62,15 +60,12 @@ Navigate to the *Features* tab in the Plugin configuration modal box. You should
 
    The *Contact Field Mapping* tab should appear now.
 
-4. Configure the `field mapping`_.
+4. Configure the field mapping.
 
 Other configuration options
-=========================
-.. vale off
+===========================
 
 - **Push Contacts to this Integration**
-
-.. vale on
 
 Mautic enables these options by default. If you leave them off, the Plugin won't push Contacts to MailChimp.
 
