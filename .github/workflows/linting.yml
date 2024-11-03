@@ -79,3 +79,5 @@ jobs:
         uses: docker://oskarstark/doctor-rst:1.61.1
         with:
           args: --short --error-format=github --cache-file=/github/workspace/.cache/doctor-rst.cache
+        env:
+            DOCS_DIR: 'docs/'
