@@ -14,19 +14,10 @@ jobs:
       with:
         fetch-depth: 0
 
-    - uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
-        cache: 'pip'
-
-    - name: Install Python dependencies
-      run: pip3 install -r docs/requirements.txt
-
     - name: Vale
       uses: errata-ai/vale-action@reviewdog
       with:
-        # Please keep version in sync with the version in .gitpod.Dockerfile for a consistent experience
-        version: 3.7.1
+        version: 2.29.2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
@@ -65,6 +56,11 @@ jobs:
       run: echo "##[set-output name=branch;]$(echo ${GITHUB_BASE_REF:=${GITHUB_REF##*/}})"
       id: extract_base_branch
 
+    - name: Get Changed Files
+      id: changes
+      run: |
+        echo "CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep '^docs/' | tr '\n' ' ')" >> $GITHUB_ENV
+
     - name: Cache DOCtor-RST
       uses: actions/cache@v2
       with:
@@ -75,8 +71,9 @@ jobs:
           doctor-rst-
 
     - name: Run DOCtor-RST
+      if: env.CHANGED_FILES != ''
       uses: docker://oskarstark/doctor-rst
       with:
-        args: --short --error-format=github --cache-file=/github/workspace/.cache/doctor-rst.cache
+        args: --short --error-format=github --cache-file=/github/workspace/.cache/doctor-rst.cache ${{ env.CHANGED_FILES }}
       env:
         DOCS_DIR: 'docs/'
