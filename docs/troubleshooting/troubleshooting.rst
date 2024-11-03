@@ -113,7 +113,7 @@ This error reported is:
 
 This means that the memory limit that Apache has available is too low. Edit the ``memory_limit`` in the ``php.ini`` configuration file. 
 
-Read more about this in :doc:`./troubleshooting/working_with_resource_limits`.
+Read more about this in :doc:`/troubleshooting/working_with_resource_limits`.
 
 A required PHP extension is missing
 ===================================

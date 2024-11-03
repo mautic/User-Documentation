@@ -17,7 +17,7 @@ The following image shows a sample Campaign overview with its highlighted panels
     :width: 600
     :alt: Screenshot showing the Campaign overview
 
-The **Details** drop-down menu gives a quick overview of the most important information about your Campaign. This information includes the name of the User who created the Campaign, Category of the Campaign, creation date and time, publishing date and time, Contact Segments in your Campaign and more.
+The **Details** drop-down menu gives a quick overview of the most important information about your Campaign. This information includes the name of the User who created the Campaign, Category of the Campaign, creation date and time, activating date and time, Contact Segments in your Campaign and more.
 
 The **Campaign Statistics** panel shows the number of Contacts added to the Campaign over the specified period of time in graphical format. To specify the time period, use the From and To date selectors, and click Apply.
 

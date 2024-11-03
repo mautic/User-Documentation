@@ -5,7 +5,7 @@ Zoho CRM
 
 .. vale on
 
-Mautic can push a Contact to :xref:`Zoho CRM` based on :doc:`Actions<Campaign actions> ` or :doc:`points trigger<Points Triggers>`.
+Mautic can push a Contact to :xref:`Zoho CRM` based on Campaign :ref:`Actions` or :ref:`Point triggers`.
 
 Language configuration warning
 ******************************
@@ -87,7 +87,7 @@ You can also configure other options:
 
     If the values are empty for the Mautic object, a value of 'Unknown' is sent. If the ZohoCRM field is a pick list, be sure the list values of Mautic's field match those of the field in ZohoCRM.
 
-8. Set the Publish switch to **Yes**.
+8. Set the Active switch to **Yes**.
 9. Click **Save & Close**.
 
 .. vale on
