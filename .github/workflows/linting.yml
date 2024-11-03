@@ -5,6 +5,9 @@ on:
 jobs:
   prose:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -18,7 +21,7 @@ jobs:
         version: 2.29.2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+          
   build:
     runs-on: ubuntu-latest
     steps:
@@ -40,3 +43,32 @@ jobs:
     - name: Check links
       working-directory: docs
       run: make checklinks
+
+  doctor_rst:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Create cache dir
+      run: mkdir .cache
+
+    - name: Extract base branch name
+      run: echo "##[set-output name=branch;]$(echo ${GITHUB_BASE_REF:=${GITHUB_REF##*/}})"
+      id: extract_base_branch
+
+    - name: Cache DOCtor-RST
+      uses: actions/cache@v2
+      with:
+        path: .cache
+        key: doctor-rst-${{ runner.os }}-${{ steps.extract_base_branch.outputs.branch }}
+        restore-keys: |
+          doctor-rst-${{ runner.os }}-
+          doctor-rst-
+
+    - name: Run DOCtor-RST
+      uses: docker://oskarstark/doctor-rst
+      with:
+        args: --short --error-format=github --cache-file=/github/workspace/.cache/doctor-rst.cache
+      env:
+        DOCS_DIR: 'docs/'
