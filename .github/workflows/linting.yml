@@ -82,8 +82,12 @@ jobs:
           key: ${{ runner.os }}-doctor-rst-${{ env.branch }}
 
       - name: "Run DOCtor-RST"
-        uses: docker://oskarstark/doctor-rst:1.61.1
-        with:
-          args: --short --error-format=github --cache-file=/github/workspace/.cache/doctor-rst.cache docs/
         env:
-          DOCS_DIR: 'docs/'
+            DOCS_DIR: 'docs/'
+        run: |
+          if [ -s changed_files.txt ]; then
+            xargs -a changed_files.txt docker run --rm -v $(pwd):/github/workspace oskarstark/doctor-rst:1.61.1 --short --error-format=github --cache-file=/github/workspace/.cache/doctor-rst.cache
+          else
+            echo "No changed files to analyze."
+          fi
+        
