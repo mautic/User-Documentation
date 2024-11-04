@@ -5,7 +5,7 @@ Social login
 With Mautic's Social Login, Users can easily sign in via their favorite social platforms like Twitter, Facebook, or LinkedIn. The social login feature automatically pre-fills Forms with profile data and updates or creates new Contacts in Mautic, streamlining the user experience.
 
 Before you begin: setup requirements
-------------------------------------
+************************************
 
 Before configuring social login, make sure you have created apps on the developer platforms for the social media profiles you want to integrate:
 
@@ -76,4 +76,3 @@ Each platform provides different user data fields. Here's a quick reference of t
 
 - **LinkedIn**: first name, last name, maiden name, formatted name, headline, location, summary, specialties, positions, public profile URL, email address.
 
-.. vale on
