@@ -28,7 +28,7 @@ To make more complex changes, follow the steps below:
 3. Create a working folder on your local computer.
 4. Open a terminal and navigate to that folder using the command `cd <path/to/folder>`.
 5. Fork the `mautic/user-documentation` repository on GitHub by clicking on the fork button at the top right.
-6. Once forked, if you know your way around Git and you are are writing documentation for something which is specific to the latest version of Mautic, you should branch from `main`.
+6. Once forked, if you know your way around Git and you are writing documentation for something which is specific to the latest version of Mautic, you should branch from `main`.
 
    If you are writing documentation for a feature which is coming in a future release - e.g. 5.0 - then branch off the relevant branch for that release, which should generally speaking match the branch used in the main mautic/mautic repository - e.g. `5.x`.
 
