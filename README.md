@@ -28,9 +28,10 @@ To make more complex changes, follow the steps below:
 3. Create a working folder on your local computer.
 4. Open a terminal and navigate to that folder using the command `cd <path/to/folder>`.
 5. Fork the `mautic/user-documentation` repository on GitHub by clicking on the fork button at the top right.
-6. Once forked, if you know your way around Git and you are are writing documentation for something which is specific to the latest version of Mautic, you should branch from `main`.  
+6. Once forked, if you know your way around Git and you are are writing documentation for something which is specific to the latest version of Mautic, you should branch from `main`.
 
-If you are writing documentation for a feature which is coming in a future release - e.g. 5.0 - then branch off the relevant branch for that release, which should generally speaking match the branch used in the main mautic/mautic repository - e.g. `5.x`.
+   If you are writing documentation for a feature which is coming in a future release - e.g. 5.0 - then branch off the relevant branch for that release, which should generally speaking match the branch used in the main mautic/mautic repository - e.g. `5.x`.
+
 7. Type `gh repo clone [your-forked-repo-name]/user-documentation` to clone your forked repository to your local computer.
 8. Open the folder `user-documentation` that is created in your editor.
 9. At the bottom left of your screen, you will see the default branch called 'main' is showing as your active branch. Click this, and a box will appear at the top of the page allowing you to 'create a new branch'. Type a name which relates to the work you plan to do.
@@ -66,28 +67,29 @@ The following provides instructions for how to build docs locally for visualizat
 5. CD into the docs directory `cd [path to this repo]/docs`
 6. Run `make html`
 7. This will generate HTML in docs/build/html. Setup a web server with the web root as docs/build/html or open docs/build/html/index.html in a browser.
- 
+
 ### Vale
 Before pushing, run Vale and address suggestions and errors as applicable.
-1. Install [`vale`][Vale] 
+1. Install [`vale`][Vale]
 2. `vale .`
 
 ### PhpStorm/PyCharm File Watcher
-You can automatically build changes to rst files using a file watcher. 
+You can automatically build changes to rst files using a file watcher.
 1. Go to Preferences -> Tools -> File Watchers -> + button -> custom
 2. Configure the watcher as presented in the screenshot
 
 <img width="753" alt="Screen Shot 2021-10-06 at 15 52 06" src="https://user-images.githubusercontent.com/63312/136281761-204861f9-340a-4e3e-8ce5-e0584236303c.png">
 
 
-[ReadTheDocs]: <https://readthedocs.org>
-[End user docs]: <https://github.com/mautic/mautic-documentation>
-[RTD badge URL]: <https://readthedocs.org/projects/mautic-documentation/badge/?version=latest>
-[RTD URL]: <https://mautic-documentation.readthedocs.io/en/latest/?badge=latest>
-[RST Cheatsheet]: <https://github.com/ralsina/rst-cheatsheet/blob/master/rst-cheatsheet.rst>
-[Sphinx Template]: <https://github.com/readthedocs/sphinx_rtd_theme/tree/master/docs/demo>
-[Sphinx Demo]: <https://sphinx-rtd-theme.readthedocs.io/en/stable/demo/structure.html>
-[Vale]: <https://vale.sh/docs/vale-cli/installation/>
+[ReadTheDocs]: https://readthedocs.org
+[End user docs]: https://github.com/mautic/mautic-documentation
+[RTD badge URL]: https://readthedocs.org/projects/mautic-documentation/badge/?version=latest
+[RTD URL]: https://mautic-documentation.readthedocs.io/en/latest/?badge=latest
+[RST Cheatsheet]: https://github.com/ralsina/rst-cheatsheet/blob/master/rst-cheatsheet.rst
+[Sphinx Template]: https://github.com/readthedocs/sphinx_rtd_theme/tree/master/docs/demo
+[Sphinx Demo]: https://sphinx-rtd-theme.readthedocs.io/en/stable/demo/structure.html
+[Vale]: https://vale.sh/docs/vale-cli/installation/
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
