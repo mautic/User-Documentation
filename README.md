@@ -69,17 +69,20 @@ The following provides instructions for how to build docs locally for visualizat
 7. This will generate HTML in docs/build/html. Setup a web server with the web root as docs/build/html or open docs/build/html/index.html in a browser.
 
 ### Vale
+
 Before pushing, run Vale and address suggestions and errors as applicable.
+
 1. Install [`vale`][Vale]
 2. `vale .`
 
 ### PhpStorm/PyCharm File Watcher
+
 You can automatically build changes to rst files using a file watcher.
+
 1. Go to Preferences -> Tools -> File Watchers -> + button -> custom
 2. Configure the watcher as presented in the screenshot
 
-<img width="753" alt="Screen Shot 2021-10-06 at 15 52 06" src="https://user-images.githubusercontent.com/63312/136281761-204861f9-340a-4e3e-8ce5-e0584236303c.png">
-
+   <img width="753" alt="Screen Shot 2021-10-06 at 15 52 06" src="https://user-images.githubusercontent.com/63312/136281761-204861f9-340a-4e3e-8ce5-e0584236303c.png">
 
 [ReadTheDocs]: https://readthedocs.org
 [End user docs]: https://github.com/mautic/mautic-documentation
