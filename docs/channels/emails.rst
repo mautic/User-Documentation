@@ -368,10 +368,10 @@ This isn't required, but if you want to be able to select the Contacts with boun
 Email Drafts
 ************
 
-.. vale on
-
 Creating a Draft Email
 ======================
+
+.. vale on
 
 Email drafts can be created using the "Save as Draft" button in the email editor. This button is available when email drafts are enabled via the configuration parameter `email_draft_enabled`.
 
@@ -387,8 +387,12 @@ Email drafts can be created using the "Save as Draft" button in the email editor
 
 An email draft allows changes to the content of the email only. Changes to the Subject, Internal Name, selected Segment, etc will apply to the original email even when editing a draft version of it. The draft content is all that is saved separately from the original email.
 
+.. vale off
+
 Previewing a Draft Email
 ========================
+
+.. val on
 
 An email draft may be previewed by appending `/draft` to the end of the email preview URL. If an email has a draft version, a Draft Preview URL will be present on the email details page below the regular Preview Url.
 
