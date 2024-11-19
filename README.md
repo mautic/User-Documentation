@@ -43,15 +43,6 @@ To make more complex changes, follow the steps below:
 15. This action will direct you to the GitHub web interface where you can add an appropriate title and description for your proposed changes.
 16. If reviewers request changes, switch back to the branch (as explained in step 9). Implement the necessary changes and follow steps 11-14 again. After updating, commit and push your changes, then notify the reviewer to check the updated content.
 
-### Generating translations files
-
-Currently, we manually create the translation files necessary for Transifex to inform translators that there are changes to the content.
-
-To do this, run the following at the command line after following the steps below to build the documentation locally.
-
-1. Run the command in the `/docs` folder `sphinx-build -b gettext . docs_translations`
-2. Commit the files created with your pull request
-
 ## Build documentation locally
 
 - [RST Syntax Cheatsheet][RST Cheatsheet]
