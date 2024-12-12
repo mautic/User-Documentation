@@ -17,7 +17,7 @@ Getting Mautic connected to HubSpot requires integrating and configuring the Hub
 
 1. Sign in to your HubSpot CRM account or create an account if you don't already have one.
 
-2. Create a private app to :xref:`Hubspot Credentials`. You need to give to your private app the adapted rights for Mautic to handle contacts, companies, etc.
+2. Create a private app to :xref:`HubSpot Credentials`. You need to give to your private app the adapted rights for Mautic to handle Contacts, Companies, etc.
 
 3. Copy your generated HubSpot Key and save it somewhere safe.
 
