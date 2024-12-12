@@ -1,6 +1,6 @@
 from . import link
 
-link_name = "Hubspot Credentials"
+link_name = "HubSpot Credentials"
 link_text = "get credentials by following the Hubspot documentation"
 link_url = "https://developers.hubspot.com/docs/api/private-apps"
 
