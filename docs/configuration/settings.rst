@@ -158,6 +158,22 @@ Campaign settings
 
 * **Use summary statistics** - Improves performance when viewing a Campaign with thousands of events per day by using summarized data. When you first turn on this setting you need to run a :ref:`cron job<campaign cron jobs>` to summarize existing data.
 
+Optimal for Contact event scheduler
+===================================
+
+.. image:: images/optimal-event-scheduler-settings.png
+  :width: 600
+  :alt: Screenshot showing Optimal for Contact event scheduler settings configuration in Mautic
+
+The optimal for Contact event scheduler settings allow you to configure the default timing and caching options used in the optimized event scheduler for Campaigns.
+
+* **Default Optimal Start Hour** - Set the default start hour for the optimal interaction window when specific Contact data is unavailable.
+* **Default Optimal End Hour** - Set the default end hour for the optimal interaction window when specific Contact data is unavailable.
+* **Default Optimal Days** - Select the default days of the week considered optimal for interaction when specific Contact data is unavailable.
+* **Interaction Data Cache Timeout** - Choose how long to cache the interaction data for.
+* **Fetch Interactions From** - Select the time frame for fetching interaction data. This determines how far back to look for interactions.
+* **Interaction Fetch Limit** - Set the maximum number of interactions of each type - for example: Page hits, Email reads, Form submits - to retrieve for timing optimization.
+
 Email settings
 **************
 
