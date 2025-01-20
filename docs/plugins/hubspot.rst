@@ -17,9 +17,9 @@ Getting Mautic connected to HubSpot requires integrating and configuring the Hub
 
 1. Sign in to your HubSpot CRM account or create an account if you don't already have one.
 
-2. Access your HubSpot dashboard to generate your :xref:`HubSpot API key`.
+2. Create a private app to :xref:`HubSpot Credentials`. You need to give to your private app the adapted rights for Mautic to handle Contacts, Companies, etc.
 
-3. Copy your generated HubSpot Key and save it somewhere safe. 
+3. Copy your generated HubSpot Key and save it somewhere safe.
 
 .. vale off
 
@@ -28,7 +28,7 @@ Configure the HubSpot CRM Plugin
 
 .. vale on
 
-.. note:: 
+.. note::
 
     Be sure to complete all steps before you activate the Plugin.
 
@@ -43,31 +43,31 @@ Configure the HubSpot CRM Plugin
   :align: center
   :alt: Screenshot of settings
 
-4. Select the **HubSpot** Plugin configuration.  
+4. Select the **HubSpot** Plugin configuration.
 
 .. image:: images/hubspot-plugin.png
   :width: 800
   :alt: Screenshot of HubSpot Plugin
 
-5. In the configuration box, paste your **API key** in the HubSpot API key input field. 
+5. In the configuration box, paste your **API key** in the HubSpot API key input field.
 
 6. Configure the **Feature Specific Settings** to synchronize Contacts, Companies, or both  from HubSpot.
 
 7. Click **Save & Close**, then edit the Plugin to configure the field mapping..
-  
-.. note:: 
+
+.. note::
 
     In the default setting, it's checked. The Plugin won't push Contacts to HubSpot CRM if you un-select it.
 
 8. Configure the :ref:`field mapping<field mapping>`.
 
 9. Click **Save** to save the Plugin configuration.
-    
+
    * If you want to use the Plugin, set the *Active* switch to **Yes**. Only do this when you have fully configured the Plugin settings.
 
 10. Set up the :ref:`cron job<configure Mautic integration cron jobs>` if you haven't already configured it.
 
-.. tip:: 
+.. tip::
 
     Script to configure in your cron job: ``php $PATH_TO_MAUTIC_DIRECTORY/bin/console mautic:integration:fetchleads --integration=Hubspot --fetch-all``
 
@@ -94,11 +94,6 @@ Note, despite ``--fetch-all`` flag, the HubSpot API endpoints used in Mautic pri
 * ``/companies/v2/companies/recent/modified/``
 
 * ``/contactslistseg/v1/lists/recently_updated/contacts/recent``
-  
-If you intend to do a full sync of your HubSpot Contacts, you need to modify an attribute of each so that they appear in HubSpot's recent/modified endpoints. 
-When connecting to a long-lived HubSpot instance, these endpoints pull only Contacts modified in the last 30 days, resulting in an incomplete sync. :xref:`Source`
 
-Credit
-******
-
-:xref:`@gpassarelli` had developed this Plugin.
+If you intend to do a full sync of your HubSpot Contacts, you need to modify an attribute of each so that they appear in HubSpot's recent/modified endpoints.
+When connecting to a long-lived HubSpot instance, these endpoints pull only Contacts modified in the last 30 days, resulting in an incomplete sync. :xref:`Source`.
