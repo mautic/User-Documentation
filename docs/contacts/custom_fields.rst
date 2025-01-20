@@ -65,10 +65,10 @@ It's important to note that from Mautic 5, you won't be able to edit the default
 
 * City
 
-Published fields
+Available fields
 *****************
 
-There is a toggle switch which shows before each label title. You can find this type of switch throughout the Mautic UI for publishing and unpublishing items.
+Each label title is preceded by a toggle switch, commonly found across the Mautic UI, to toggle item availability.
 
 .. only:: html
 
@@ -100,7 +100,7 @@ There is a way around this when you configure the processing of field creation i
 
 Since :xref:`Mautic 3` there is an option you can set in your ``app/config/local.php`` file: ``'create_custom_field_in_background' => true``,.
 
-If you configure this option, the new Custom Field becomes visible in the list of Custom Fields. The Custom Field remains unpublished until you run the command ``bin/console mautic:custom-field:create-column``. This command creates the actual column in the table and publishes the field metadata.
+If you configure this option, the new Custom Field becomes visible in the list of Custom Fields. The Custom Field remains unavailable for use until you run the command ``bin/console mautic:custom-field:create-column``. This command creates the actual column in the table and the field metadata.
 
 This configuration helps prevent **http** request timeouts because it handles the long-running SQL query to create the new table column as a background task.
 

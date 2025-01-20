@@ -22,7 +22,7 @@ Working with Assets
 
 .. vale on
 
-Before creating an Asset, first establish and publish any Categories required. It's not possible to assign Assets to unpublished Categories. If you wish to use an Integration such as the Amazon S3 Plugin to host your files, set this up before creating an Asset.
+Before creating an Asset, first establish and create any Categories required. It's not possible to assign Assets to unavailable Categories. If you wish to use an Integration such as the Amazon S3 Plugin to host your files, set this up before creating an Asset.
 
 .. vale off
 
@@ -77,13 +77,13 @@ The following fields are available:
 - **Description** - an internally used description to inform other Mautic Users what the Asset is and/or where it's used.
 - **Category** - used to organize resources - see :doc:`/categories/categories-overview` for more information
 - **Language** - the language of this Asset - can be helpful in multilingual marketing Campaigns and for reporting purposes
-- **Published** - Whether the Asset is available for use - published - or not available - unpublished
+- **Available** - Whether the Asset is available for use or not available
 
 .. vale off
 
-**Publish at (date/time)** - This allows you to define the date and time at which this Asset is available
+**Activate at (date/time)** - This allows you to define the date and time at which this Asset is available
 
-**Unpublish at (date/time)** - This allows you to define the date and time at which this Asset ceases to be available
+**Deactivate at (date/time)** - This allows you to define the date and time at which this Asset ceases to be available
 
 .. vale on
 
@@ -141,7 +141,7 @@ Deleting an Asset
 It's possible to delete an Asset by clicking on the 'delete' button while viewing the Asset, or by selecting the arrow next to the checkbox for the Asset, and selecting 'delete'. Mautic displays a confirmation screen, prompting confirmation that you wish to delete the Asset.
 
 .. warning:: 
-    Once deleted, you can't retrieve an Asset, and statistics relating to the number of downloads for that Asset are no longer be available. Contact Points accumulated as a result of accessing the resource remain. It's recommended where possible to unpublish Assets which are no longer in use - in future there may be an archive feature.
+    Once deleted, you can't retrieve an Asset, and statistics relating to the number of downloads for that Asset are no longer be available. Contact Points accumulated as a result of accessing the resource remain. It's recommended where possible to deactivate Assets which are no longer in use - in future there may be an archive feature.
 
 Display Assets directly in the browser
 ======================================

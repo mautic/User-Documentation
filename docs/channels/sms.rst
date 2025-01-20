@@ -77,7 +77,7 @@ The following fields are available:
 
 **Language** - This allows you to set the language of this Text Message.
 
-**Published** - This allows you to set the published status of the Text Message. Unpublished Text Messages aren't sent.
+**Available** - This allows you to set the availability status of the Text Message. Unavailable Text Messages aren't sent.
 
 .. vale off
 
@@ -104,15 +104,15 @@ The following fields are available:
 
 **Language** - This allows you to set the language of this Text Message.
 
-**Published** - This allows you to set the published status of the Text Message. Unpublished Text Messages aren't sent.
+**Available** - This allows you to set the availability status of the Text Message. Unavailable Text Messages aren't sent.
 
 **Contact Segment** - This allows you to define the Segment/s who should receive the Text Message.
 
 .. vale off
 
-**Publish at (date/time)** - This allows you to define the date and time at which this Text Message is available for sending to Contacts
+**Enable at (date/time)** - This allows you to define the date and time at which this Text Message is available for sending to Contacts
 
-**Unpublish at (date/time)** - This allows you to define the date and time at which this Text Message ceases to be available for sending to Contacts.
+**Disable at (date/time)** - This allows you to define the date and time at which this Text Message ceases to be available for sending to Contacts.
 
 Creating Text Messages from Campaign Builder
 ============================================

@@ -24,13 +24,13 @@ The following fields are available:
 
 - **Category** - Assign a Category to help you organize your Forms.
 
-- **Published** - Whether the Form is available for use - published - or not available - unpublished. Unpublished Forms won't be visible when you've added the Form using JavaScript. If you used the manual method to copy and paste the Form HTML, the Form remains visible but visitors **won't** be able to submit it - an error message prevents them from submitting if they try to submit an unpublished Form.
+- **Available** - Whether the Form is available for use or not available. Unavailable Forms won't be visible when you've added the Form using JavaScript. If you used the manual method to copy and paste the Form HTML, the Form remains visible but visitors **won't** be able to submit it - an error message prevents them from submitting if they try to submit an unavailable Form.
 
 .. vale off
 
-- **Publish at (date/time)** - This allows you to define the date and time at which this Form is available for submissions.
+- **Activate at (date/time)** - This allows you to define the date and time at which this Form is available for submissions.
 
-- **Unpublish at (date/time)** - This allows you to define the date and time at which this Form ceases to be available for submissions.
+- **Deactivate at (date/time)** - This allows you to define the date and time at which this Form ceases to be available for submissions.
 
 .. vale on
 
@@ -366,7 +366,7 @@ Typically you would use a Form action to populate static Segments - Segments whi
 
 .. vale on
 
-- **Download an Asset**: this option triggers an immediate download of the selected file when the Contact submits the Form. If you use Categories to organize your Assets, you can elect to have them download the most recently published Asset in a selected Category. If you prefer, you can link to a specific Asset.
+- **Download an Asset**: this option triggers an immediate download of the selected file when the Contact submits the Form. If you use Categories to organize your Assets, you can elect to have them download the most recently enabled Asset in a selected Category. If you prefer, you can link to a specific Asset.
 
 .. image:: images/forms/download_an_asset.png
   :width: 600

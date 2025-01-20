@@ -81,7 +81,7 @@ The following values are available:
 
 - **Is a translation of** - If you're creating a slot in a second language translation - for example to use on a multilingual website - select the original base language Dynamic Web Content item which you're translating. The same slot displays the appropriate language based on the Campaign or filters set, but Mautic shows the translated content if a visitor is viewing the page in a different browser language.
 
-- **Published** - Whether the Dynamic Web Content item is available for use - published - or not available - unpublished
+- **Available** - Whether the Dynamic Web Content item is available for use or not available
 
 - **Is Campaign based** - if set to Yes, Mautic pushes this Dynamic Web Content to Contacts through a Campaign. When set to No, you can specify filters for visitors to see the content.
 
@@ -89,9 +89,9 @@ The following values are available:
 
 .. vale off
 
-**Publish at (date/time)** - This allows you to define the date and time at which this Dynamic Web Content item is available for displaying to Contacts
+**Enable at (date/time)** - This allows you to define the date and time at which this Dynamic Web Content item is available for displaying to Contacts
 
-**Unpublish at (date/time)** - This allows you to define the date and time at which this Dynamic Web Content item ceases to be available for displaying to Contacts.
+**Disable at (date/time)** - This allows you to define the date and time at which this Dynamic Web Content item ceases to be available for displaying to Contacts.
 
 .. vale on
 
