@@ -5,46 +5,89 @@ on:
 jobs:
   prose:
     runs-on: ubuntu-22.04 # See https://github.com/errata-ai/vale-action/issues/128 before upgrading
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-    - uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
-        cache: 'pip'
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          cache: 'pip'
 
-    - name: Install Python dependencies
-      run: pip3 install -r docs/requirements.txt
+      - name: Install Python dependencies
+        run: pip3 install -r docs/requirements.txt
 
-    - name: Vale
-      uses: errata-ai/vale-action@reviewdog
-      with:
-        # Please keep version in sync with the version in .gitpod.Dockerfile for a consistent experience
-        version: 3.7.1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+      - name: Vale
+        uses: errata-ai/vale-action@reviewdog
+        with:
+          # Please keep version in sync with the version in .gitpod.Dockerfile for a consistent experience
+          version: 3.7.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
-        cache: 'pip'
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          cache: 'pip'
 
-    - name: Install Python dependencies
-      run: pip3 install -r docs/requirements.txt
+      - name: Install Python dependencies
+        run: pip3 install -r docs/requirements.txt
     
-    - name: Build docs
-      working-directory: docs
-      run: make html
+      - name: Build docs
+        working-directory: docs
+        run: make html
 
-    - name: Check links
-      working-directory: docs
-      run: make checklinks
+      - name: Check links
+        working-directory: docs
+        run: make checklinks
+
+  doctor_rst:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Current Branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Ensures full history is fetched
+
+      - name: Extract base branch name
+        id: extract_base_branch
+        run: echo "branch=${GITHUB_BASE_REF:-${GITHUB_REF##*/}}" >> $GITHUB_ENV
+
+      - name: Get changed files
+        id: changed_files
+        run: |
+          git fetch origin ${{ env.branch }}:refs/remotes/origin/${{ env.branch }}
+          git diff --name-only origin/${{ env.branch }}...HEAD > changed_files.txt
+
+      - name: "Create cache dir"
+        run: mkdir .cache
+
+      - name: "Cache DOCtor-RST"
+        uses: actions/cache@v3
+        with:
+          path: .cache
+          key: ${{ runner.os }}-doctor-rst-${{ env.branch }}
+
+      - name: "Run DOCtor-RST"
+        env:
+            DOCS_DIR: 'docs/'
+        run: |
+          if [ -s changed_files.txt ]; then
+            xargs -a changed_files.txt docker run --rm -v $(pwd):/github/workspace oskarstark/doctor-rst:1.61.1 --short --error-format=github --cache-file=/github/workspace/.cache/doctor-rst.cache
+          else
+            echo "No changed files to analyze."
+          fi
+        
