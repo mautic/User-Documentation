@@ -9,9 +9,13 @@ Segments in Mautic are lists or groups of Contacts. Use Segments to send Emails,
 
 Segments provide ways to easily organize your Contacts. There are a variety of fields available for configuring these Segments.
 
-When viewing all Segments, the **# contacts** column on the right shows the number of Contacts included in that particular Segment.
+When viewing all Segments, the **# contacts** column on the right shows the number of Contacts included in that particular Segment. If the segment is new and has not been built it will show **Building** until the segment is rebuilt. If a segment has its filters changed it will show **Building (# contacts)** until the segment finishes rebuilding to reflect the new filters.
 
 .. image:: images/contact-segment.png
+  :width: 700
+  :alt: Screenshot showing Contacts matching that particular Segment.
+
+.. image:: images/contact-segment-building.png
   :width: 700
   :alt: Screenshot showing Contacts matching that particular Segment.
 
@@ -26,7 +30,7 @@ Creating a Segment
 .. vale on
 
 1. To create a new Segment, navigate to Segments in the menu, and click the **+New** button.
-   
+
 2. In the **Details** tab, add a **Name**, **Public name** and **Description** to your Segment.
 
 .. image:: images/create-segment.png
@@ -113,7 +117,7 @@ Adding individual Contacts
 .. vale on
 
 1. Navigate to the Contact record you want to change.
-  
+
 2. Click the arrow in the top right, next to **Edit/Send Email/Close**.
 
 3. Select **Preference**.
@@ -148,7 +152,7 @@ Inside a :ref:`Campaign<campaigns overview>`, you can add or remove Contacts fro
     :alt: Screenshot Campaign builder connector.
 
 2. Select **Action**.
-   
+
 3. In the list of actions, select **Modify Contact's Segments**.
 
 4. Choose from the list of existing Segments you want to add or remove your Contact from.
@@ -202,10 +206,10 @@ Once a Contact has accrued an assigned number of Points, the system can add them
 
 5. Decide if you'd like to add all Contacts with at least that number of Points to the Segment:
 
-.. tip:: 
-     
+.. tip::
+
     * If you only want to add new Contacts who reach the threshold to this Segment, select **No** - default.
-    
+
     * To add all existing Contacts with at least a certain number of Points to the Segment, toggle the switch to **Yes**.
 
 1. Click **Events**.
@@ -270,29 +274,29 @@ Configuring Segment filters
 
 3. Click the **Filters** tab to add filters.
 
-4. Click the **Choose one**… menu and search for the field you'd like to Segment by. 
+4. Click the **Choose one**… menu and search for the field you'd like to Segment by.
 
-.. attention:: 
+.. attention::
 
   Listed below are three types of fields:
 
   * Contact fields
-  
+
     * Set Fields to **Available for Segments = Yes** in your Custom Field manager to display here.
 
   * Contact behavior and actions
   * Primary Company fields
-    
+
     * Set Fields to **Available for Segments = Yes** in your Custom Field manager to appear here.
-    
+
     * Contacts associates with multiple Companies, but Mautic adds them to Segments based on fields for the primary Company.
 
 5. Add more filters, using the **And** and **Or** operators. An **Or** operator creates a new group of filters which can include And operators.
 
 6. Click **Save and close**.
 
-.. note:: 
-    
+.. note::
+
     Segments are rebuilt according to how frequently you fire your :ref:`cron jobs<segment cron jobs>`.
 
     * If a Segment fails to rebuild for a predetermined length of time, Mautic displays a notification alerting you of an error. For information on defining this time period, see :ref:`Segment settings<segment settings>`
@@ -307,8 +311,8 @@ Using Date Filters
 
 You can create dynamic Segments by using date filters.
 
-.. note:: 
-  
+.. note::
+
   The date format for values stored in the database is ``YYYY-MM-DD``. For example, December 11, 2020 is stored as 2020-12-11 and November 12, 2020 is stored as 2020-11-12. To update the display format for dates, go to **Settings > Configuration > System Settings > System Defaults**. However, this doesn't alter the storage format in the database.
 
 .. vale off
@@ -357,14 +361,14 @@ Once you've selected a date field as your filter, such as the default **Date las
 
   *For example, A value of 1 matches anyone whose field value is on the 1^st, 21^st, or 31^st of any month but a value of 01 matches the 1 st of a month. A value of 01-01 finds Contacts whose value is for January 1 of any year.*
 
-* **Contains** - Segment includes Contacts with the specified filter value anywhere in the field value. 
+* **Contains** - Segment includes Contacts with the specified filter value anywhere in the field value.
 
 .. image:: images/operators-2.png
     :alt: Screenshot showing Operators.
 
 Once you have selected the field you can then choose the type of operation to perform. These vary depending on the way you wish to filter your Contacts.
 
-.. vale off 
+.. vale off
 
 Matching part of a string
 =========================
@@ -385,18 +389,18 @@ First three filters match strings as you enter it. ``like`` filter is for advanc
 A few notes for text filters:
 
 * You should use ``starts with``, ``ends with``, ``contains`` rather than ``like`` as they're more specific, and therefore can be more effective.
-  
+
 *  A ``%`` character in the middle of the string has no special meaning. A ``contains`` filter with ``my % string`` searches for a string with ``%`` in the middle. The same is TRUE for a ``like`` filter with ``%my % string%`` value. There is no need to escape this character.
 
 * Mautic searches for the ``%`` character in a value for the ``like`` filter, if finding at least one ``%`` Mautic doesn't perform any modification.
 
-You can use regular expressions in a ``regexp`` filter. Mautic recognises all common operators like ``|`` for OR  - for example ``first string|second string``, character sets including ``[0-9]``, ``[a-z0-9]`` and so forth, repetitions (``+``, ``*``, ``?``) and more. 
+You can use regular expressions in a ``regexp`` filter. Mautic recognises all common operators like ``|`` for OR  - for example ``first string|second string``, character sets including ``[0-9]``, ``[a-z0-9]`` and so forth, repetitions (``+``, ``*``, ``?``) and more.
 
-You have to escape special characters with ``\`` if you want to use them as matching character. 
+You have to escape special characters with ``\`` if you want to use them as matching character.
 
-Learn more about :xref:`Regex`. 
+Learn more about :xref:`Regex`.
 
-.. note:: 
+.. note::
 
   MySQL (and Mautic) uses ``POSIX`` regular expressions, which could behave differently from other types of regular expressions.
 
@@ -427,7 +431,7 @@ Example - Consider that today is ``2022-03-05``:
 * ``Date identified equals -1 months`` returns all Contacts identified on 2022-02-05.
 * ``Date identified greater or equal -1`` year returns all Contacts identified 2021-03-05 and after.
 * ``Date identified greater than -1`` year returns all Contacts identified after 2021-03-05.
-  
+
 Beside this you can specify your date with text. These formulas are **translatable**, so make sure you use them in correct format.
 
 * ``birthday`` / ``anniversary``
@@ -487,11 +491,11 @@ Deleting thousands of Contacts this way in one Segment becomes a tedious task. L
 
 2. Use the :ref:`Delete contact action<using the campaign builder>`.
 
-This way the ``mautic:campaign:update`` and ``mautic:campaign:trigger`` commands delete all the Contacts in the Segment, and all the Contacts added to the Segment in the future. 
+This way the ``mautic:campaign:update`` and ``mautic:campaign:trigger`` commands delete all the Contacts in the Segment, and all the Contacts added to the Segment in the future.
 It's all done automatically in the background.
 It's necessary to configure the :ref:`cron jobs<segment cron jobs>`.
 
-.. danger:: 
+.. danger::
 
   You can't recover deleted Contacts unless you restore your entire Mautic database backup. **Use with extreme caution**.
 
