@@ -321,6 +321,8 @@ Mail send settings
   
 * **Custom return path (bounce) address** - Set a custom return path/bounce Email address for Emails sent from the system. Note that some mail transports, such as GMail, won't support this.
 
+* **E-mail address length limit** - This setting determines the maximum allowed length for email addresses, including the display name. The default value is 320 characters. If an email address (including the display name) exceeds this limit, Mautic will use only the email address without the display name when sending emails. This helps prevent errors with email servers that have strict length restrictions. You can adjust this value if you need to accommodate longer email addresses or if you want to set a more restrictive limit.
+
 * **Mailer is owner** - If Contacts in Mautic have owners, select Yes to use the Contact owner as the sender of Emails to any Contacts they're listed as the owner for.
 
 .. note:: 
