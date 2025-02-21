@@ -79,6 +79,7 @@ The actions that Mautic offers in a Campaign include:
      - Sends a Webhook to a defined URL, using the GET, POST, PUT, PATCH, or DELETE methods. Headers and data is customizable, and support the use of tokens, such as Contact fields and the Contact's IP address. For example, ``{contactfield=firstname}``
    * - **Send Email**   
      - Sends a transaction or marketing Email to the selected Contact. You can send a transactional Email to the Contact multiple times. You can only send a marketing Email to the Contact  once across multiple sources. If the Contact has already received this Email from another source or the current Campaign, they aren't sent the Email again and the Contact progresses through the Campaign.
+     - Emails can be transactional or marketing. Marketing emails will obey Email Channel's Do Not Contact setting of the contact, Transactional Emails will disregard the Do Not Contact value. This allows to send Transactional emails as campaign step to Contacts even if they opted out to recieve Marketing emails via standard unsubscribe action and have DNC set as 'no'. Enable transactional email ignoring DNC can be turned on in Email Settings.
    * - **Send Email to User** 
      - Sends an Email to an entity other than the Contact. This may be a Mautic User, the Contact's owner, or non-Users. Emails sent using this action don't generate any statistics for Contacts or Emails.
    * - **Send Marketing Message**
