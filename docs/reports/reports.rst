@@ -39,17 +39,21 @@ The **Details** tab on a Report contains the same options across all Reports and
    
    * Message Queue
 
-4. :doc:`Emails</channels/emails>`
+4. Audit Log
+    
+   * Audit Log
+
+5. :doc:`Emails</channels/emails>`
     
    * Emails
    * Emails Sent
 
-5. :doc:`Forms</components/forms>`
+6. :doc:`Forms</components/forms>`
    
    * Forms
    * Form Submissions
 
-6. :doc:`Contacts</contacts/manage_contacts>`
+7. :doc:`Contacts</contacts/manage_contacts>`
    
    * Contacts
    * Multi Touch Attributions
@@ -62,21 +66,21 @@ The **Details** tab on a Report contains the same options across all Reports and
    * UTM Codes
    * Group score
 
-7. :doc:`Companies</companies/companies_overview>`
+8. :doc:`Companies</companies/companies_overview>`
    
    * Companies
 
-8. :doc:`Mobile Notifications</channels/marketing_messages>`
+9. :doc:`Mobile Notifications</channels/marketing_messages>`
    
    * Mobile Notifications
    * Mobile Notifications Sent
 
-9. :doc:`Pages</components/landing_pages>`
+10. :doc:`Pages</components/landing_pages>`
     
    * Landing Pages
    * Page hits
 
-10. Videos
+11. Videos
 
     * Video hits
 
