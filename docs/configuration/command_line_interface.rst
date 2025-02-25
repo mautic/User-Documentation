@@ -161,6 +161,9 @@ These are the commands you may need to use in relation to your Mautic instance. 
    * - ``mautic:segments:update``
      - Update Contacts in smart Segments based on new Contact data.
      - ``mautic:segments:rebuild``
+   * - ``mautic:segments:stat``
+     - Outputs table of all Segments and whether they are being used in Campaigns, Emails, other Segments, Form actions and SMS. Useful to detect Segments that can be deleted to save resources on rebuilds.
+     -
    * - ``mautic:theme:json-config``
      - Converts Theme config to JSON from PHP
      - 
